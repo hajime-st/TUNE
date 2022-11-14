@@ -1,0 +1,30 @@
+body{
+  margin: 0;
+}
+
+header{
+  background-color: #26d0c9;
+  color: #fff;
+  height: 90px;
+}
+
+.header-logo{
+  float: left;
+  font-size: 30px;
+  padding: 20px 10px;
+}
+
+.header-list ul{
+  justify-content: flex-end;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+ }
+.header-list li{
+   float: left;
+   list-style: none;
+   margin-left: 30px;
+   padding-top: 30px;
+ }
+

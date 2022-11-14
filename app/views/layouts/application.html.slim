@@ -8,6 +8,8 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
+    /= stylesheet_link_tag 'header', :media => "all"
+    = yield :css
   body
-    / = render 'shared/header'
+    = render 'shared/header'
     = yield
