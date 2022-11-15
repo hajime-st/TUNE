@@ -11,5 +11,8 @@ html
     /= stylesheet_link_tag 'header', :media => "all"
     = yield :css
   body
-    = render 'shared/header'
+    - if logged_in?
+      = render 'shared/header'
+    - else 
+      = render 'shared/before_login_header'
     = yield
