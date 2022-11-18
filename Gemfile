@@ -35,11 +35,6 @@ gem "dotenv-rails"
 gem 'sorcery'
 gem 'pry-byebug'
 
-#test
-gem 'net-imap'
-gem 'net-pop'
-gem 'net-smtp'
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
