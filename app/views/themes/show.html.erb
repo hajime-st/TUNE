@@ -3,9 +3,3 @@
   <%= form.text_field :search %>
   <%= form.submit 'アーティスト名検索', name: nil %>
 <% end %>
-
-<% if @songs %>
-  <% @songs.each do |song| %>
-    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
-  <% end %>
-<% end %>

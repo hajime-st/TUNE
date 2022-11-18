@@ -18,9 +18,6 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-    if params[:search]
-      @songs = RSpotify::Track.search(params[:search]).first(10)
-    end
   end
 
   def search
