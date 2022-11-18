@@ -27,6 +27,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#For Spotify
+gem 'rspotify'
+
 gem "dotenv-rails"
 
 gem 'sorcery'
