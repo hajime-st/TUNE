@@ -1,11 +1,5 @@
-<h3>アーティスト名で検索</h3>
-<%= form_with url: theme_path, method: :get, local: true do |form| %>
-  <%= form.text_field :search %>
-  <%= form.submit 'アーティスト名検索', name: nil %>
-<% end %>
-
-<% if @songs %>
-  <% @songs.each do |song| %>
-    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
-  <% end %>
-<% end %>
+<h2><%= "お題: #{@theme.title}" %></h2>
+<%# 解答一覧 %>
+<%= render 'answers/answers', { answers: @answers } %>
+<%# 解答フォーム %>
+<%= render 'themes/search_form', { search_params: @search_params } %>
