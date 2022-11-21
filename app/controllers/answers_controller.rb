@@ -11,8 +11,13 @@ class AnswersController < ApplicationController
   def update
     @answer = current_user.answers.find(params[:id])
     if @answer.update(answer_params)
-      redirect_to theme_path(answer.theme)
+      redirect_to theme_path(@answer.theme)
     end
+  end
+
+  def destroy
+    @answer =  current_user.answers.find(params[:id])
+    @answer.destroy!
   end
 
   private

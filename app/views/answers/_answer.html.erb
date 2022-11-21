@@ -1,1 +1,2 @@
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= answer.answer %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p><br>
+<p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= answer.answer %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+<%= link_to '解答を削除する', theme_answer_path(theme, my_answer), data: { turbo_method: :delete } if answer.user_id == current_user.id %>

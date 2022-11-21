@@ -7,8 +7,10 @@
 <% if @songs %>
   <% @songs.each do |song| %>
     <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
-    <% if @my_answer %>
+    <% if !@my_answer.present? %>
       <%= button_to "この曲で解答する", theme_answers_path(@theme), {params: {answer: "#{song.id}"}} %>
+    <% else %>
+      <%= button_to "解答を更新する", theme_answer_path(@theme, @my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
     <% end %>
   <% end %>
 <% end %>
