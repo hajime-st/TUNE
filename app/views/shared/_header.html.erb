@@ -7,9 +7,9 @@
 
   <div class="header-list">
     <ul>
-      <li><%= link_to 'お題を投稿', new_theme_path %></li>
+      <li><%= link_to (t 'themes.new.title'), new_theme_path %></li>
       <li><%= link_to "#{current_user.first_name} #{current_user.last_name}", '#' %></li>
-      <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %></li>
+      <li><%= link_to (t 'defaults.logout'), logout_path, data: { turbo_method: :delete } %></li>
     </ul>
   </div>
 </header>

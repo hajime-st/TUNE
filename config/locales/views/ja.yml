@@ -1,0 +1,22 @@
+ja:
+  defaults:
+    register: '登録'
+    login: 'ログイン'
+    logout: 'ログアウト'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+  themes:
+    new:
+      title: 'お題作成'
+      submit: '投稿'
+    search:
+      title: '曲名で検索'
+      search: '検索'
+      result: '検索結果'
