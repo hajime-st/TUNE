@@ -3,4 +3,10 @@ class Answer < ApplicationRecord
   belongs_to :theme
 
   validates :answer, presence: true
+  validates :answer, uniqueness: { scope: :theme_id }
+  validates :theme_id, uniqueness: { scope: :user_id }
+
+  def my_answer?
+    id == self.user_id
+  end
 end

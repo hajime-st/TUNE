@@ -2,4 +2,4 @@
 <%# 解答一覧 %>
 <%= render 'answers/answers', { answers: @answers } %>
 <%# 解答フォーム %>
-<%= render 'themes/search_form', { search_params: @search_params } %>
+<%= render 'themes/search_form', { search_params: @search_params, answers: @answers} %>

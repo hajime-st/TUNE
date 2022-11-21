@@ -4,10 +4,11 @@
   <%= form.submit 'アーティスト名検索', name: nil %>
   <h4><%= "検査結果: #{search_params}" %></h4>
 <% end %>
-
 <% if @songs %>
   <% @songs.each do |song| %>
     <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
-    <%= button_to "この曲で解答する", theme_answers_path(@theme), {params: {answer: "#{song.id}"}} %>
+    <% if @my_answer %>
+      <%= button_to "この曲で解答する", theme_answers_path(@theme), {params: {answer: "#{song.id}"}} %>
+    <% end %>
   <% end %>
 <% end %>
