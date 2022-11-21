@@ -18,6 +18,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer =  current_user.answers.find(params[:id])
     @answer.destroy!
+    redirect_to theme_path(@answer.theme)
   end
 
   private
