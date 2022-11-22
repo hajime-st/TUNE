@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
         user: 'ユーザー'
+        comment: 'コメント'
     attributes:
         user:
           name: ユーザー名
@@ -11,3 +12,5 @@ ja:
         theme:
           title: タイトル
           genre: ジャンル
+        comment:
+          body: 'コメント'

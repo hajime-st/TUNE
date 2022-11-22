@@ -1,0 +1,7 @@
+<p>
+  <%= comment.user.name %>
+  <%= simple_format(comment.body) %>
+  <% if current_user.own?(comment) %>
+    <%= link_to (t 'defaults.delete'), theme_comment_path(theme, comment), data: { turbo_method: :delete } %>
+  <% end %>
+</p>

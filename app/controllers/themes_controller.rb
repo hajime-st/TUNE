@@ -25,6 +25,8 @@ class ThemesController < ApplicationController
     # @answer = Answer.new
     @answers = @theme.answers.includes(:user).order(created_at: :desc)
     @my_answer = Answer.where(theme_id: @theme).where(user_id: current_user.id).first
+    @comment = Comment.new
+    @comments = @theme.comments.includes(:user).order(created_at: :desc)
   end
 
   private

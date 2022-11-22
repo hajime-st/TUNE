@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :relationships, only: %i[create destroy]
   resources :themes do
     resources :answers, only: %i[create update destroy]
+    resources :comments, only: %i[create destroy]
   end
 end

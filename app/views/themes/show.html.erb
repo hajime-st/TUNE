@@ -1,5 +1,13 @@
 <h2><%= "お題: #{@theme.title}" %></h2>
+
 <%# 解答一覧 %>
 <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
+
 <%# 解答フォーム %>
 <%= render 'themes/search_form', { search_params: @search_params, answers: @answers} %>
+
+<%# コメントフォーム %>
+<%= render 'comments/form', { theme: @theme, comment: @comment } %>
+
+<%# コメントエリア %>
+<%= render 'comments/comments', { theme: @theme, comments: @comments } %>
