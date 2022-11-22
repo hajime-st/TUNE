@@ -1,3 +1,5 @@
 <%= "#{ User.human_attribute_name(:email)}： #{current_user.email}" %><br>
 <%= "#{ User.human_attribute_name(:name)}： #{current_user.name}" %>
+<%= render 'shared/stats' %>
+<%= render 'follow_form' if logged_in? %>
 <p><%= link_to t('defaults.edit'), edit_profile_path %></p>
