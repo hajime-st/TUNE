@@ -1,0 +1,6 @@
+<h1><%= @user.name %></h1>
+<%= link_to "view my profile", @user %>
+<%= render 'shared/stats' %>
+<% if @users.any? %>
+  <%= render @users %>
+<% end %>
