@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :themes do
     resources :answers, only: %i[create update destroy]
   end
+  resource :profile, only: %i[show edit update]
 end

@@ -2,12 +2,8 @@
   <h1><%= t 'users.new.title' %></h1>
   <%= form_with model: @user, local: true do |f| %>
     <div>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </div>
-    <div class>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
     <div class>
       <%= f.label :email %>

@@ -3,6 +3,7 @@ ja:
     register: '登録'
     login: 'ログイン'
     logout: 'ログアウト'
+    edit: '編集'
   users:
     new:
       title: 'ユーザー登録'
@@ -12,6 +13,7 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+  profiles:
   themes:
     new:
       title: 'お題作成'
