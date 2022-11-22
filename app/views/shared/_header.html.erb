@@ -10,7 +10,6 @@
       <li><%= link_to (t 'themes.new.title'), new_theme_path %></li>
       <li><%= link_to "#{current_user.name}", user_path(current_user) %></li>
       <li><%= link_to (t 'defaults.logout'), logout_path, data: { turbo_method: :delete } %></li>
-      <li><%= current_user.name %></li>
     </ul>
   </div>
 </header>
