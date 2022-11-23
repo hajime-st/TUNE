@@ -9,12 +9,12 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :email, uniqueness: true, presence: true
+  # 登録したユーザーがパスワード以外のプロフィール項目を更新したい場合に、パスワードの入力を省略させる。
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
-
-  validates :email, uniqueness: true, presence: true
-  validates :name, presence: true, length: { maximum: 255 }
 
   #ユーザーのオブジェクトかどうかを判定する
   def own?(object)
