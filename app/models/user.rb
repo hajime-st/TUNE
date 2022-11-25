@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :likes, dependent: :destroy
+  has_many :liked_answers, through: :likes, source: :answer
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, uniqueness: true, presence: true
@@ -34,5 +36,20 @@ class User < ApplicationRecord
   # フォローしているか判定
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  # Like時の処理
+  def like(answer)
+    liked_answers << answer
+  end
+
+  # Unlike時の処理
+  def unlike(answer)
+    liked_answers.destroy(answer)
+  end
+
+  # Likeしているか判定
+  def like?(answer)
+    answer.likes.pluck(:user_id).include?(id)
   end
 end
