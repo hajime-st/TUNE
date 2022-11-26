@@ -1,0 +1,37 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn build --watch
+
+PATH: 
+  /Users/hajime/.rbenv/versions/3.1.2/bin:/opt/homebrew/Cellar/rbenv/1.2.0/libexec:/Users/hajime/.nodebrew/current/bin:/Users/hajime/.pyenv/shims:/Users/hajime/.rbenv/shims:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/hajime/Desktop/TUNE/package.json: Unexpected token : in JSON at position 9
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  "scripts":{
+    // yarn buildに対応
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    // yarn build:cssに対応
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+ile

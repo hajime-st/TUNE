@@ -1,0 +1,4 @@
+<%= turbo_frame_tag 'unlike' do %>
+  <%= link_to 'Unlike', like_path(answer.likes.find { |a| a.user_id == current_user.id }), 
+                          data: { turbo_method: :delete } %>
+<% end %>

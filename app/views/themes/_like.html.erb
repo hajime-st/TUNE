@@ -1,0 +1,6 @@
+<%= turbo_frame_tag 'like' do %>
+  <%= link_to 'Like', likes_path(answer_id: answer.id),
+                        id: "js-like-button-for-answer-#{answer.id}",
+                        data: { turbo_method: :post },
+                        remote: true if !current_user.like?(answer)  %>
+<% end %>
