@@ -11,7 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
-  create_table "answers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
     t.string "answer", null: false
     t.bigint "user_id", null: false
     t.bigint "theme_id", null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.text "body", null: false
     t.bigint "user_id", null: false
     t.bigint "theme_id", null: false
@@ -31,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "answer_id", null: false
     t.datetime "created_at", null: false
@@ -41,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
@@ -51,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "themes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "themes", force: :cascade do |t|
     t.string "title", null: false
     t.string "genre"
     t.bigint "user_id", null: false
@@ -60,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_004815) do
     t.index ["user_id"], name: "index_themes_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
