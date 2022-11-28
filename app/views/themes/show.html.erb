@@ -1,6 +1,13 @@
+<%# お題 %>
 <h2><%= "お題: #{@theme.title}" %></h2>
 
+<%# タグ %>
+<div>
+  タグ： <%= render @theme.tags %>
+</div>
+
 <%# 解答一覧 %>
+<h3>解答一覧</h3>
 <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
 
 <%# 解答フォーム %>

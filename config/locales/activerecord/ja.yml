@@ -14,3 +14,5 @@ ja:
           genre: ジャンル
         comment:
           body: 'コメント'
+        tag:
+          name: 'タグ'

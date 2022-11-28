@@ -7,6 +7,10 @@
      <%= f.label :genre %>
      <%= f.text_field :genre %>
    </div>
+   <div>
+     <%= f.label :tag_names, Tag.human_attribute_name(:name) %>
+     <%= f.text_field :tag_names, placeholder: '例: #JROCK #邦ロック好き' %>
+   </div>
 
    <%= f.submit (t 'themes.new.submit')%>
  <% end %>
