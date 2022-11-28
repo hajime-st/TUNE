@@ -1,6 +1,9 @@
 <%# お題 %>
 <h2><%= "お題: #{@theme.title}" %></h2>
 
+<%# お題画像 %>
+<%= image_tag @theme.theme_image_url, size: '300x200' if @theme.theme_image_url %>
+
 <%# タグ %>
 <div>
   タグ： <%= render @theme.tags %>

@@ -32,6 +32,6 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:title, :genre)
+    params.require(:theme).permit(:title, :genre, :theme_image, :theme_image_cache)
   end
 end

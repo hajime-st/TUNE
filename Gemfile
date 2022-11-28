@@ -9,7 +9,7 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use mysql as the database for Active Record
+# Use pg as the database for Active Record
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -27,15 +27,19 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-#For Spotify
+# For Spotify
 gem 'rspotify'
 
+# Set environment variable
 gem "dotenv-rails"
 
 gem 'sorcery'
 gem 'pry-byebug'
 
 gem 'rails-i18n'
+
+# Upload File
+gem 'carrierwave'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

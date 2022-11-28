@@ -11,6 +11,11 @@
      <%= f.label :tag_names, Tag.human_attribute_name(:name) %>
      <%= f.text_field :tag_names, placeholder: '例: #JROCK #邦ロック好き' %>
    </div>
+   <div>
+     <%= f.label :theme_image %>
+     <%= f.file_field :theme_image, accept: 'image/*' %>
+     <%= f.hidden_field :theme_image_cache %>
+   </div>
 
    <%= f.submit (t 'themes.new.submit')%>
  <% end %>
