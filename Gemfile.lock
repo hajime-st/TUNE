@@ -146,6 +146,7 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     multi_xml (0.6.0)
+    mysql2 (0.5.4)
     net-imap (0.3.1)
       net-protocol
     net-pop (0.1.2)
@@ -177,7 +178,6 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    pg (1.4.5)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -335,7 +335,7 @@ DEPENDENCIES
   html2slim
   importmap-rails
   jbuilder
-  pg (~> 1.1)
+  mysql2 (~> 0.5)
   pry-byebug
   puma (~> 5.0)
   rails (~> 7.0.4)
