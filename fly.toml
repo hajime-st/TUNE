@@ -1,4 +1,4 @@
-# fly.toml file generated for tune-app on 2022-11-27T10:07:32+09:00
+# fly.toml file generated for tune-app on 2022-11-28T14:25:12+09:00
 
 app = "tune-app"
 kill_signal = "SIGINT"
