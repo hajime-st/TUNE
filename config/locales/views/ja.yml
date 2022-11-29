@@ -16,6 +16,8 @@ ja:
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
   themes:
+    index:
+      title: 'お題一覧'
     new:
       title: 'お題作成'
       submit: '投稿'
@@ -23,3 +25,5 @@ ja:
       title: '曲名で検索'
       search: '検索'
       result: '検索結果'
+    edit:
+      title: 'お題編集'

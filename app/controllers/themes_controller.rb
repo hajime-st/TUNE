@@ -1,4 +1,6 @@
 class ThemesController < ApplicationController
+  before_action :find_theme, only: [:edit, :update, :destroy]
+
   def index
     @themes = Theme.all.includes(:user).order(created_at: :desc)
   end
@@ -31,9 +33,28 @@ class ThemesController < ApplicationController
     @comments = @theme.comments.includes(:user).order(created_at: :desc)
   end
 
+  def edit; end
+
+  def update
+    if @theme.update(theme_params)
+      redirect_to @theme
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @theme.destroy!
+    redirect_to themes_path
+  end
+
   private
 
   def theme_params
     params.require(:theme).permit(:title, :genre, :theme_image, :theme_image_cache)
+  end
+
+  def find_theme
+    @theme = current_user.themes.find(params[:id])
   end
 end

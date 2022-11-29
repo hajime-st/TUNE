@@ -1,1 +1,7 @@
-<p><%= link_to theme.title, theme_path(theme) %></p>
+<div>
+  <h2><%= link_to theme.title, theme_path(theme) %></h2>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_theme_path(theme) if current_user.own?(theme) %>
+    <%= link_to 'Delete', theme_path(theme), data: { turbo_method: :delete } if current_user.own?(theme) %>
+  <% end %>
+</div>
