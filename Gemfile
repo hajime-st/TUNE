@@ -42,6 +42,10 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'fog-aws'
 
+# Css Framework
+gem "cssbundling-rails", ">= 0.1.0"
+gem "jsbundling-rails", "~> 0.1.0"
+
 #Search feature
 #gem 'ransack'
 
