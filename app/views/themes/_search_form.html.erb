@@ -6,9 +6,9 @@
   <% end %>
 </div>
 
-<h4><%= "#{(t 'themes.search.result')}: #{search_params}" %></h4>
 
 <%= turbo_frame_tag "song_search" do %>
+  <h4><%= "#{(t 'themes.search.result')}: #{search_params}" %></h4>
   <% if songs %>
     <% songs.each do |song| %>
       <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>

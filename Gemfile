@@ -40,9 +40,10 @@ gem 'rails-i18n'
 
 # Upload File
 gem 'carrierwave'
+gem 'fog-aws'
 
 #Search feature
-gem 'ransack'
+#gem 'ransack'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
