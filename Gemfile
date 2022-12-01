@@ -45,6 +45,7 @@ gem 'fog-aws'
 # Css Framework
 gem "cssbundling-rails", ">= 0.1.0"
 gem "jsbundling-rails", "~> 0.1.0"
+gem "tailwindcss-rails"
 
 #Search feature
 #gem 'ransack'
