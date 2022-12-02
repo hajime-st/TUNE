@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: false,
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
@@ -9,6 +10,7 @@ module.exports = {
     require("daisyui")
   ],
   daisyui: {
-    themes: ["lemonade"]
+    themes: ["light"],
+    darkTheme: "light",
   }
 }
