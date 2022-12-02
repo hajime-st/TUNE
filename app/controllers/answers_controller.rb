@@ -1,4 +1,15 @@
 class AnswersController < ApplicationController
+  def new
+    if params[:search]
+      @search_params = params[:search]
+      @songs = RSpotify::Track.search(params[:search]).first(5)
+      @theme = params[:theme_id]
+      if current_user
+        @my_answer = Answer.where(theme_id: @theme).where(user_id: current_user.id).first
+      end
+    end
+  end
+
   def create
     @answer = current_user.answers.build(answer_params)
     if @answer.save

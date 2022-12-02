@@ -14,7 +14,10 @@
 <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
 
 <%# 解答フォーム %>
-<%= render 'themes/search_form', { songs: @songs, theme: @theme, search_params: @search_params, my_answer: @my_answers, answers: @answers } %>
+<div>
+  <%= link_to '解答を投稿する', new_theme_answer_path(@theme) %>
+</div>
+<%#= render 'themes/search_form', { songs: @songs, theme: @theme, search_params: @search_params, my_answer: @my_answers, answers: @answers } %>
 
 <%# コメントフォーム %>
 <% if current_user %>

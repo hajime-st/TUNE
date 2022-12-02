@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: %i[create destroy]
   resources :themes do
-    resources :answers, only: %i[create update destroy]
+    resources :answers
     resources :comments, only: %i[create destroy]
   end
   resources :likes, only: %i[create destroy]

@@ -1,0 +1,24 @@
+<h3><%= (t 'themes.search.title') %></h3>
+<div>
+  <%= form_with url: new_theme_answer_path, method: :get, html: { data: { turbo_frame: "song_search" } } do |form| %>
+    <%= form.text_field :search %>
+    <%= form.submit (t 'themes.search.search'), name: nil %>
+  <% end %>
+</div>
+
+
+<%= turbo_frame_tag "song_search" do %>
+  <h4><%= "#{(t 'themes.search.result')}: #{@search_params}" %></h4>
+  <% if @songs %>
+    <% @songs.each do |song| %>
+      <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+      <% if current_user %>
+        <% if !@my_answer.present? %>
+          <%= button_to "この曲で解答する", theme_answers_path(@theme), {params: {answer: "#{song.id}"}} %>
+        <% else %>
+          <%= button_to "解答を更新する", theme_answer_path(@theme, @my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
