@@ -15,7 +15,7 @@
 
 <%# 解答フォーム %>
 <div>
-  <%= link_to '解答を投稿する', new_theme_answer_path(@theme) %>
+  <%= link_to '解答を投稿する', new_theme_answer_path(@theme), {class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"} %>
 </div>
 <%#= render 'themes/search_form', { songs: @songs, theme: @theme, search_params: @search_params, my_answer: @my_answers, answers: @answers } %>
 

@@ -38,7 +38,7 @@ class ThemesController < ApplicationController
 
   def update
     if @theme.update(theme_params)
-      redirect_to @theme
+      redirect_to themes_path
     else
       render :edit
     end
