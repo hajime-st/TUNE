@@ -1,5 +1,5 @@
 <header>
-  <nav class="flex items-center justify-between bg-teal-500 p-8">
+  <nav class="flex items-center w-screen justify-between bg-teal-500 p-8">
     <div class="flex items-center flex-shrink-0 text-black">
       <%# ここにロゴ画像 %>
       <%# <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg> %>
@@ -14,6 +14,6 @@
       <%= link_to (t 'themes.new.title'), new_theme_path, {class: "mr-4"} %>
       <%= link_to "#{current_user.name}", user_path(current_user), {class: "-mr-2"} %>
       <%#= link_to (t 'defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "mr-1 invisible lg:visible" %>
-    <div>
+    <div>    
   </nav>
 </header>
