@@ -1,22 +1,25 @@
-<div class="flex flex-col items-center p-4">
+<div class="flex flex-col lg:flex-row items-center lg:items-start p-4">
   <%# お題画像 %>
   <%= image_tag @theme.theme_image_url, {class:"w-1/2 md:w-2/5 lg:w-1/4" } if @theme.theme_image_url %>
 
   <%# お題 %>
   <h2 class="md:text-xl font-semibold"><%= "お題: #{@theme.title}" %></h2>
 
-  <%# タグ %>
-  <div>
-    タグ：<%= render @theme.tags %>
-  </div>
+  <%# ジャンル %>
+  <h3 class="md:text-l"><%= "ジャンル: #{@theme.genre}" if @theme.genre.present? %></h3>
 
+  <%# タグ %>
+  <%# <div>
+    タグ：<%= render @theme.tags %>
+  <%# </div> %>
+</div>
+
+<div class="flex flex-col items-center mb-4">
   <%# 解答投稿ボタン%>
   <div>
     <%= link_to '解答を投稿する', new_theme_answer_path(@theme), {class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"} %>
   </div>
 </div>
-
-
   
 <div class="flex flex-col">
   <%# 解答一覧 %>
