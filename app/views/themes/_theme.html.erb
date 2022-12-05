@@ -1,4 +1,7 @@
-<div class=" w-2/5 md:w-5/12 lg:w-4/5 h-auto bg-blue-300 mx-3 my-4 lg:flex lg:py-5 justify-items-center">
-  <%= image_tag theme.theme_image_url, {class:"object-contain lg:w-60 overflow-hidden flex-none lg:mx-13" } if theme.theme_image_url %>
-  <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-11 lg:text-2xl"><%= link_to theme.title, theme_path(theme) %></div>
+<div class=" w-2/5 md:w-5/12 lg:w-4/5 h-auto bg-blue-300 mx-3 my-4 lg:flex lg:py-5 2xl:ml-48 justify-items-center">
+  <%= image_tag theme.theme_image_url, {class:"object-contain lg:w-60 overflow-hidden flex-none lg:mx-13 lg:pl-7" } if theme.theme_image_url %>
+  <div class="">
+    <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-11 lg:text-2xl lg:pl-48"><%= link_to theme.title, theme_path(theme) %></div>
+    <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-5 lg:text-2xl lg:pl-48"><%= "ジャンル: #{theme.genre}" if theme.genre.present? %></div>
+  </div>
 </div>

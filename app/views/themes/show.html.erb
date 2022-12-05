@@ -1,29 +1,35 @@
-<%# お題 %>
-<h2><%= "お題: #{@theme.title}" %></h2>
+<div class="flex flex-col items-center p-4">
+  <%# お題画像 %>
+  <%= image_tag @theme.theme_image_url, {class:"w-1/2 md:w-2/5 lg:w-1/4" } if @theme.theme_image_url %>
 
-<%# お題画像 %>
-<%= image_tag @theme.theme_image_url, size: '300x200' if @theme.theme_image_url %>
+  <%# お題 %>
+  <h2 class="md:text-xl font-semibold"><%= "お題: #{@theme.title}" %></h2>
 
-<%# タグ %>
-<div>
-  タグ： <%= render @theme.tags %>
+  <%# タグ %>
+  <div>
+    タグ：<%= render @theme.tags %>
+  </div>
+
+  <%# 解答投稿ボタン%>
+  <div>
+    <%= link_to '解答を投稿する', new_theme_answer_path(@theme), {class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"} %>
+  </div>
 </div>
 
-<%# 解答一覧 %>
-<h3>解答一覧</h3>
-<%= render @answers, { theme: @theme, my_answer: @my_answer} %>
 
-<%# 解答フォーム %>
-<div>
-  <%= link_to '解答を投稿する', new_theme_answer_path(@theme), {class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"} %>
+  
+<div class="flex flex-col">
+  <%# 解答一覧 %>
+  <div class="flex flex-col items-center">
+    <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
+  </div>
 </div>
-<%#= render 'themes/search_form', { songs: @songs, theme: @theme, search_params: @search_params, my_answer: @my_answers, answers: @answers } %>
 
-<%# コメントフォーム %>
-<% if current_user %>
-  <%= render 'comments/form', { theme: @theme, comment: @comment } %>
-<% end %>
+    <%# コメントフォーム %>
+    <%# if current_user %>
+      <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
+    <%# end %>
 
-<%# コメントエリア %>
-<h4>コメント一覧</h4>
-<%= render 'comments/comments', { theme: @theme, comments: @comments } %>
+    <%# コメントエリア %>
+    <%# <h4>コメント一覧</h4> %>
+    <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>

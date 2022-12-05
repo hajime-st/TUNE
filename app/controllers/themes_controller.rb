@@ -20,12 +20,6 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-    # 検索結果を表示
-    if params[:search]
-      @search_params = params[:search]
-      @songs = RSpotify::Track.search(params[:search]).first(10)
-    end
-    # @answer = Answer.new
     @answers = @theme.answers.includes(:user).order(created_at: :desc)
     if current_user
       @my_answer = Answer.where(theme_id: @theme).where(user_id: current_user.id).first
