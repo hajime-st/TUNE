@@ -42,6 +42,9 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'fog-aws'
 
+#Process image
+gem 'mini_magick'
+
 # Css Framework
 gem "cssbundling-rails", ">= 0.1.0"
 gem "jsbundling-rails", "~> 0.1.0"

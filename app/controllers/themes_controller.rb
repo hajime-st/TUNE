@@ -39,6 +39,8 @@ class ThemesController < ApplicationController
   end
 
   def destroy
+    @theme.remove_theme_image!
+    @theme.save
     @theme.destroy!
     redirect_to themes_path
   end
