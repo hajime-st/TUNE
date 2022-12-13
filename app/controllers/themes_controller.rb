@@ -49,7 +49,7 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:title, :genre, :theme_image, :theme_image_cache)
+    params.require(:theme).permit(:title, :description, :genre, :theme_image, :theme_image_cache)
   end
 
   def find_theme

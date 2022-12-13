@@ -12,6 +12,7 @@ ja:
         theme:
           title: タイトル
           genre: ジャンル
+          description: 詳細
         comment:
           body: 'コメント'
         tag:
