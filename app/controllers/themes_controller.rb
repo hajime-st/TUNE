@@ -20,6 +20,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
+    @theme_genre = @theme.genre.split(",")
     @answers = @theme.answers.includes(:user).order(created_at: :desc)
     if current_user
       @my_answer = Answer.where(theme_id: @theme).where(user_id: current_user.id).first

@@ -8,6 +8,11 @@ class AnswersController < ApplicationController
         @my_answer = Answer.where(theme_id: @theme).where(user_id: current_user.id).first
       end
     end
+    @theme_genre = []
+    Theme.find(params[:theme_id]).genre.split(",").each do |genre|
+      @theme_genre << Regexp.new(genre)
+    end
+
   end
 
   def create

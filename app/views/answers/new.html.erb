@@ -1,3 +1,4 @@
+<%# binding.pry %>
 <h3><%= (t 'themes.search.title') %></h3>
 <div>
   <%= form_with url: new_theme_answer_path, method: :get, html: { data: { turbo_frame: "song_search" } } do |form| %>
@@ -8,17 +9,23 @@
 
 
 <%= turbo_frame_tag "song_search" do %>
+  <%# binding.pry %>
   <h4><%= "#{(t 'themes.search.result')}: #{@search_params}" %></h4>
   <% if @songs %>
     <% @songs.each do |song| %>
       <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="30%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
       <% if current_user %>
-        <% if !@my_answer.present? %>
-          <%= button_to "この曲で解答する", theme_answers_path(@theme), {params: {answer: "#{song.id}"}} %>
+        <% if @theme_genre.empty? %>
+          <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
+        <% elsif @theme_genre.first === "洋楽" && !genre_include?(song.artists.first.genres, @theme_genre) %>
+          <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
+        <% elsif @theme_genre.first != "洋楽" && genre_include?(song.artists.first.genres, @theme_genre) %>
+          <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
         <% else %>
-          <%= button_to "解答を更新する", theme_answer_path(@theme, @my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
+          この曲はジャンル対象外です
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 <% end %>
+<%# if @theme_genre.empty? || !song.artists.first.genres.grep(/#{@theme_genre.second}/).empty? || !song.artists.first.genres.grep(/#{@theme_genre.third}/).empty? %>

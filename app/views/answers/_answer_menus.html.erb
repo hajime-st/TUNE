@@ -1,0 +1,6 @@
+<%# binding.pry %>
+<% if !my_answer.present? %>
+  <%= button_to "この曲で解答する", theme_answers_path(theme), {params: {answer: "#{song.id}"}} %>
+<% else %>
+  <%= button_to "解答を更新する", theme_answer_path(theme, my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
+<% end %>

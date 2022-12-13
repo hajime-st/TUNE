@@ -2,7 +2,7 @@
   <%= image_tag theme.theme_image_url, {class:"object-contain lg:w-60 overflow-hidden flex-none lg:mx-13 lg:pl-7" } if theme.theme_image_url %>
   <div class="">
     <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-11 lg:text-2xl lg:pl-48"><%= link_to theme.title, theme_path(theme) %></div>
-    <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-5 lg:text-2xl lg:pl-48"><%= "ジャンル: #{theme.genre}" if theme.genre.present? %></div>
+    <div class="text-gray-900 font-bold text-xl mb-2 bg-cover break-words lg:pt-5 lg:text-2xl lg:pl-48"><%= "ジャンル: #{theme.genre.split(",").first}" if theme.genre.present? %></div>
     <% if current_user %>
         <%= link_to 'Edit', edit_theme_path(theme) if current_user.own?(theme) %>
         <%= link_to 'Delete', theme_path(theme), data: { turbo_method: :delete } if current_user.own?(theme) %>

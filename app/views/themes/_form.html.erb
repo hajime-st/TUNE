@@ -5,7 +5,19 @@
    </div>
    <div>
      <%= f.label :genre %>
-     <%= f.text_field :genre %>
+     <%= f.select :genre,
+                  #['邦楽', '洋楽', 'J-POP', 'J-Rock', 'ロック', 'オルタナティブ', 'ポップ', 'K-POP', 'ダンス', 'ヒップホップ', 'パンク','クラシック', 'ジャズ'],
+                  #['洋楽', '洋楽'], ['J-POP', 'J-POP,j-pop, ""']
+                  [
+                    ['邦楽', '邦楽,j-,japanese,vocaloid'], ['洋楽', '洋楽,j-,japanese,vocaloid'],
+                    ['J-POP', 'J-POP,j.+pop'], ['J-Rock', 'J-Rock,j.+rock'],
+                    ['ロック', 'ロック,rock'], ['オルタナティブ', 'オルタナティブ,alternative'],
+                    ['ポップ', 'ポップ,pop'], ['K-POP', 'K-POP,k-pop'],
+                    ['エレクトロニック', 'エレクトロニック,elect'], ['ヒップホップ/ラップ', 'ヒップホップ/ラップ,hip hop,rap'],
+                    ['クラシック', 'クラシック,composition,classical'], ['ジャズ', 'ジャズ,jazz']
+                  ],
+                  { include_blank: true }
+     %>
    </div>
    <div>
      <%= f.label :tag_names, Tag.human_attribute_name(:name) %>
@@ -16,6 +28,5 @@
      <%= f.file_field :theme_image, accept: 'image/*' %>
      <%= f.hidden_field :theme_image_cache %>
    </div>
-
    <%= f.submit %>
  <% end %>
