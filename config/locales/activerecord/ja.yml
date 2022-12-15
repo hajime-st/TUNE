@@ -17,3 +17,9 @@ ja:
           body: 'コメント'
         tag:
           name: 'タグ'
+    errors:
+      models:
+        tag:
+          #エラーのフォーマットを個別設定
+          format: "%{message}"
+          inclusion: '#から始めて下さい'
