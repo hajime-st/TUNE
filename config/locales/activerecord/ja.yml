@@ -1,25 +1,29 @@
 ja:
   activerecord:
     models:
-        user: 'ユーザー'
-        comment: 'コメント'
+        user: ユーザー
+        comment: コメント
     attributes:
         user:
-          name: ユーザー名
+          name: 名前
           email: メールアドレス
-          password: 'パスワード'
-          password_confirmation: 'パスワード確認'
+          username: ユーザー名
+          password: パスワード
+          password_confirmation: パスワード確認
         theme:
           title: タイトル
           genre: ジャンル
           description: 詳細
         comment:
-          body: 'コメント'
+          body: コメント
         tag:
-          name: 'タグ'
+          name: タグ
     errors:
       models:
-        tag:
-          #エラーのフォーマットを個別設定
-          format: "%{message}"
-          inclusion: '#から始めて下さい'
+        user:
+          invalid: 'は無効な形式です'
+            # invalid: 'は無効な形式です。アルファベット、数字、_のいずれかで構成して下さい。'
+        # tag:
+        #   #エラーのフォーマットを個別設定
+        #   format: "%{message}"
+        #   inclusion: '#から始めて下さい'

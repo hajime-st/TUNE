@@ -8,8 +8,8 @@ ja:
     delete: '削除'
   users:
     new:
-      title: 'ユーザー登録'
-      to_login_page: 'ログインページへ'
+      title: 'サインアップ'
+      to_login_page: 'ログイン'
   user_sessions:
     new:
       title: 'ログイン'

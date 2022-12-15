@@ -11,8 +11,14 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_answers, through: :likes, source: :answer
 
-  validates :name, presence: true, length: { maximum: 255 }
-  validates :email, uniqueness: true, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  VALID_USERNAME_REGEX = /\A(?!\.)[\w.]+(?<!\.)\z/
+  validates :username, presence: true, uniqueness: true, length: { maximum: 20 }, format: { with: VALID_USERNAME_REGEX, message: "は英数字、アンダーバーのみ使用できます" }
+  validates :password, presence: true, length: { minimum: 6 }
+
+
   # 登録したユーザーがパスワード以外のプロフィール項目を更新したい場合に、パスワードの入力を省略させる。
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

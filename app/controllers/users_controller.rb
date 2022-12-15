@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to login_path
     else
-      render :new
+      @user.valid?
+      render :new, status: :unprocessable_entity
     end
   end
   
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :username)
   end
 
   # def set_user

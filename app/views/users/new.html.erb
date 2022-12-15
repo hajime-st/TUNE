@@ -1,25 +1,58 @@
-<div class="container">
-  <h1><%= t 'users.new.title' %></h1>
-  <%= form_with model: @user, local: true do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+<div class="flex flex-col items-center">
+  <%= form_with model: @user, class: "bg-white pt-10 flex flex-col w-11/12 md:w-5/12 border-b", local: true do |f| %>
+    <p class="text-2xl md:text-4xl text-center md:text-left font-bold border-b pb-2 w-full"><%= t 'users.new.title' %></p>
+    <div class="mt-5">
+      <%= f.label :name, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:name)  %>
+        <%= f.text_field :name, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.text_field :name, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:name).first %></p>
+      <% end %> 
     </div>
-    <div class>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+    <div class="mt-5">
+      <%= f.label :email, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:email)  %>
+        <%= f.email_field :email, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.email_field :email, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:email).first %></p>
+      <% end %>
     </div>
-    <div class>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <div class="mt-5">
+      <%= f.label :username, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:username) %>
+        <%= f.text_field :username, placeholder: '英数字、アンダーバーのみ使用できます', class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.text_field :username, placeholder: '英数字、アンダーバーのみ使用できます', class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:username).first %></p>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:username).second %></p>
+      <% end %>
     </div>
-    <div class>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
+    <div class="mt-5">
+      <%= f.label :password, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:password) %>
+        <%= f.password_field :password, placeholder: '6文字以上', class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.password_field :password, placeholder: '6文字以上', class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:password).first %></p>
+      <% end %>
     </div>
-    <%= f.submit (t 'defaults.register') %>
+    <div class="mt-5">
+      <%= f.label :password_confirmation, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:password_confirmation) %>
+        <%= f.password_field :password_confirmation, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.password_field :password_confirmation, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+      <% end %>
+    </div>
+    <button class="my-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
+      <%= f.submit (t 'defaults.register') %>
+    </button>
   <% end %>
-  <div>
-    <%= link_to (t '.to_login_page'), login_path %>
+  <div class="mt-5 mb-10">
+    <span>すでにアカウントを持っていますか?</span>
+    <%= link_to (t '.to_login_page'), login_path, class:"text-sky-600	ml-1" %>
   </div>
 </div>
