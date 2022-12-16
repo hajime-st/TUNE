@@ -1,5 +1,6 @@
 <% if @themes.present? %>
   <%= render @themes %>
+  <div class="flex justify-center	mt-10 mb-24"><%= paginate @themes %></div>
 <% else %>
   <p><%= 'お題がありません' %></p>
 <% end %>

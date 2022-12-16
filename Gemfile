@@ -45,10 +45,13 @@ gem 'fog-aws'
 #Process image
 gem 'mini_magick'
 
-# Css Framework
+# CSS Framework
 gem "cssbundling-rails", ">= 0.1.0"
 gem "jsbundling-rails", "~> 0.1.0"
 gem "tailwindcss-rails"
+
+#Pagenation
+gem 'kaminari'
 
 #Search feature
 #gem 'ransack'

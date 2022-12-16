@@ -2,7 +2,7 @@ class ThemesController < ApplicationController
   before_action :find_theme, only: [:edit, :update, :destroy]
 
   def index
-    @themes = Theme.all.includes(:user).order(created_at: :desc)
+    @themes = Theme.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
