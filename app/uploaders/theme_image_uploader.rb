@@ -25,7 +25,7 @@ class ThemeImageUploader < CarrierWave::Uploader::Base
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
     default_image = ["default_image.png", "default_image2.jpg", "peter-thiel_41058.jpg"]
-    if self.model.id % 2 == 0
+    if self.model.id % 2 === 0
       default_image[0]
     else
       default_image[2]
