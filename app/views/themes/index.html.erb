@@ -1,8 +1,5 @@
-<%# <div class="flex flex-col items-center"> %>
-<div class="container grid grid-cols-2 mx-auto lg:flex lg:flex-wrap place-items-center">
-  <% if @themes.present? %>
-    <%= render @themes %>
-  <% else %>
-    <p><%= 'お題がありません' %></p>
-  <% end %>
-</div>
+<% if @themes.present? %>
+  <%= render @themes %>
+<% else %>
+  <p><%= 'お題がありません' %></p>
+<% end %>

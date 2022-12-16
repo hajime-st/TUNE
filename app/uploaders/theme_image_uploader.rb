@@ -30,7 +30,7 @@ class ThemeImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process resize_to_fit: [400, 400]
-  process resize_and_pad: [400, 400, background="#FFFFFF", gravity='Center']	
+  process resize_and_pad: [600, 600, background="#FFFFFF", gravity='Center']	
   #
   # def scale(width, height)
   #   # do something
