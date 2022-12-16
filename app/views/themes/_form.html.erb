@@ -55,12 +55,12 @@
     </div>
     <div class="mt-5">
       <div class="flex items-center">
-        <%= f.label :theme_image, '画像', class: "text-m font-bold" %>
+        <%= f.label :image, '画像', class: "text-m font-bold" %>
         <span class="text-xs italic text-slate-500 ml-1">任意</span>
       </div>
-      <%= f.file_field :theme_image, accept: 'image/*',
+      <%= f.file_field :image, accept: 'image/*',
          class: "mt-2 block w-2/3 lg:w-1/2 xl:w-1/3 text-sm border cursor-pointer bg-gray-50 focus:outline-none" %>
-      <%= f.hidden_field :theme_image_cache %>
+      <%= f.hidden_field :image_cache %>
     </div>
     <button class="my-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
       <%= f.submit 'お題を投稿する', class:"cursor-pointer" %>

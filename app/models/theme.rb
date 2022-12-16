@@ -1,5 +1,5 @@
 class Theme < ApplicationRecord
-  mount_uploader :theme_image, ThemeImageUploader
+  mount_uploader :image, ThemeImageUploader
   belongs_to :user
   has_many :answers, dependent: :destroy
   has_many :comments, dependent: :destroy

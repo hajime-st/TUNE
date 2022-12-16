@@ -11,7 +11,8 @@ class ThemesController < ApplicationController
 
   def create
     @theme = current_user.themes.build(theme_params)
-    if params[:theme][:tag_names].nil? && @theme.save && @theme.valid?
+    # binding.pry
+    if params[:theme][:tag_names].empty? && @theme.save && @theme.valid?
       redirect_to themes_path
     elsif !params[:theme][:tag_names].nil? && @theme.save_with_tags(tag_names: params.dig(:theme, :tag_names).gsub(' ', '').split('#').uniq.reject(&:blank?))
       redirect_to themes_path
@@ -43,7 +44,7 @@ class ThemesController < ApplicationController
   end
 
   def destroy
-    @theme.remove_theme_image!
+    @theme.remove_image!
     @theme.save
     @theme.destroy!
     redirect_to themes_path
@@ -52,7 +53,7 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:title, :description, :genre, :theme_image, :theme_image_cache)
+    params.require(:theme).permit(:title, :description, :genre, :image, :image_cache)
   end
 
   def find_theme

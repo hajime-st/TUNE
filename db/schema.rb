@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_15_014622) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_16_010224) do
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "answer", null: false
     t.bigint "user_id", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_014622) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "theme_image"
+    t.string "image"
     t.text "description"
     t.index ["user_id"], name: "index_themes_on_user_id"
   end
