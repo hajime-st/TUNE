@@ -1,7 +1,6 @@
 <% if @themes.present? %>
   <%= turbo_frame_tag @themes.current_page do %>
     <%= render @themes %>
-  <%# <div class="flex justify-center	mt-10 mb-24"><%= paginate @themes </div> %>
     <%= turbo_frame_tag @themes.next_page, loading: :lazy, src: path_to_next_page(@themes) %>
   <% end %>
 <% else %>
