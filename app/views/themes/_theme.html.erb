@@ -1,15 +1,10 @@
-<div class="flex flex-col items-center">
-  <div class="w-full lg:w-4/5 lg:flex  bg-white mt-5">
-    <%= image_tag theme.image_url, {class:"object-contain lg:w-80 lg:h-80 overflow-hidden flex-none" } if theme.image_url %>
-    <div class="">
-      <div class="font-bold text-xl lg:text-4xl bg-cover break-words lg:mt-11 lg:ml-6"><%= link_to theme.title, theme_path(theme) %></div>
-      <div class="text-xl lg:text-xl bg-cover break-words lg:mt-3 lg:ml-6"><%= "ジャンル: #{theme.genre.split(",").first}" if theme.genre.present? %></div>
-    </div>
-  </div>
-  <div class="container justify-start border-b pb-5">
-    <% if current_user %>
-      <%= link_to 'Edit', edit_theme_path(theme) if current_user.own?(theme) %>
-      <%= link_to 'Delete', theme_path(theme), data: { turbo_method: :delete } if current_user.own?(theme) %>
+<div class="col-span-1 justify-center justify-self-center">
+  <div class="container aspect-[4/5] flex flex-col bg-blue-300">
+    <%= link_to theme_path(theme) do %>
+      <%= image_tag theme.image_url, {class:"object-contain aspect-square overflow-hidden flex-none opacity-100 hover:opacity-75" } if theme.image_url %>
     <% end %>
+      <div>
+        <div class="font-bold text-2xl bg-cover break-words"><%= link_to theme.title, theme_path(theme) %></div>
+      </div>
   </div>
 </div>
