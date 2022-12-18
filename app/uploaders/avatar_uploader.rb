@@ -1,16 +1,17 @@
-class ThemeImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
+  # storage :fog
 
-  if Rails.env.development? # 開発環境の場合
+  if Rails.env.development?
     storage :file
-  elsif Rails.env.test? # テスト環境の場合
+  elsif Rails.env.test?
     storage :file
-  else # 本番環境の場合
+  else
     storage :fog
   end
 
@@ -24,18 +25,12 @@ class ThemeImageUploader < CarrierWave::Uploader::Base
   def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    default_image = ["default_image.png", "default_image2.jpg"]
-    if self.model.id % 7 == 0
-      default_image[0]
-    else
-      default_image[1]
-    end
+    "default_avatar.jpg"
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
   # Process files as they are uploaded:
-  # process resize_to_fit: [400, 400]
-  process resize_and_pad: [600, 600, background="#FFFFFF", gravity='Center']	
+  # process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
@@ -43,7 +38,7 @@ class ThemeImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-  #   process resize_to_fit: [50, 50]
+  process resize_to_fill: [100, 100, "Center"]
   # end
 
   # Add an allowlist of extensions which are allowed to be uploaded.

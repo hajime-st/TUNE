@@ -10,7 +10,7 @@
     <div class="lg:text-lg flex flex-nowrap items-center whitespace-pre ">
       <%= link_to (t 'themes.index.title'), themes_path, {class: "pr-2 md:pr-6 lg:pr-9"} %>
       <%= link_to (t 'themes.new.title'), new_theme_path, {class: "pr-2 md:pr-6 lg:pr-9"} %>
-      <%= link_to "#{current_user.name}", user_path(current_user), {class: ""} %>
+      <%= link_to "#{current_user.name}", user_path(current_user.username), {class: ""} %>
     <div>    
   </nav>
 </header>

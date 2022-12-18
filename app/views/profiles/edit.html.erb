@@ -1,0 +1,27 @@
+<div class="flex flex-col items-center">
+  <%= form_with model: @user, url: profile_url, class: "bg-white pt-10 flex flex-col w-11/12 md:w-5/12 border-b", local: true do |f| %>
+    <p class="text-2xl md:text-4xl text-center md:text-left font-bold border-b pb-2 w-full"><%= t 'defaults.user_edit' %></p>
+    <div class="mt-5">
+      <%= f.label :email, class: "text-m font-bold" %>
+      <%= f.email_field :email, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+    </div>
+    <div class="mt-5">
+      <%= f.label :name, class: "text-m font-bold" %>
+      <% unless @user.errors.include?(:name) %>
+        <%= f.text_field :name, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <% else %>
+        <%= f.text_field :name, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
+        <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:name).first %></p>
+      <% end %>
+    </div>
+    <div class="mt-5">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, class: "", accept: 'image/*' %>
+      <%= f.hidden_field :avatar_cache %>
+      <%= image_tag @user.avatar.url, class: 'rounded-full mt-4' %>
+    </div>
+    <button class="mt-7 mb-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
+      <%= f.submit '更新' %>
+    </button>
+  <% end %>
+</div>
