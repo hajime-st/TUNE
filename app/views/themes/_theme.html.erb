@@ -4,7 +4,12 @@
       <%= image_tag theme.image_url, {class:"object-contain aspect-square overflow-hidden flex-none opacity-100 hover:opacity-75" } if theme.image_url %>
     <% end %>
       <div>
-        <div class="font-bold text-2xl bg-cover break-words"><%= link_to theme.title, theme_path(theme) %></div>
+        <div class="font-bold text-2xl bg-cover break-all"><%= link_to theme.title, theme_path(theme) %></div>
+        <%= link_to user_path(theme.user.username), {class: "flex items-center mt-1"} do %>
+          <%= image_tag theme.user.avatar.url, class:'w-7 rounded-full ml-1'  %>
+          <span class="ml-1 text-lg"><%= theme.user.name %></span>
+        <% end %>
+        <div class="ml-1 text-m text-neutral-500"><%= l theme.created_at %></div>
       </div>
   </div>
 </div>

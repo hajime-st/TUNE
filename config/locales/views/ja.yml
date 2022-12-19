@@ -31,3 +31,8 @@ ja:
       result: '検索結果'
     edit:
       title: 'お題編集'
+  views:
+    pagination:
+      previous: "« 前ページ"
+      next: "次ページ »"
+      truncate: "..."

@@ -6,8 +6,8 @@ class Theme < ApplicationRecord
   has_many :theme_tag_relations, dependent: :destroy
   has_many :tags, through: :theme_tag_relations, dependent: :destroy
   
-  validates :title, presence: true, length: { maximum: 255 }
-  validates :description, length: { maximum: 255 }
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :description, length: { maximum: 160 }
 
   def save_with_tags(tag_names:)
     ActiveRecord::Base.transaction do
