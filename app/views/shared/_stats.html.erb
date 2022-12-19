@@ -1,16 +1,16 @@
 <% user ||= current_user %>
-<div class="stats">
-  <%= link_to following_user_path(user.username) do %>
-    <strong id="following">
-      <%= user.following.count %>
-    </strong>
-    following
-  <% end %>
+  <div>
+    <%= link_to followers_user_path(user.username), class:"text-lg" do %>
+      <span class="font-bold">
+        <%= user.followers.count %>
+      </span>
+      フォロワー
+    <% end %>
 
-  <%= link_to followers_user_path(user.username) do %>
-    <strong id="followers">
-      <%= user.followers.count %>
-    </strong>
-    followers
-  <% end %>
-</div>
+    <%= link_to following_user_path(user.username), class:"ml-5 text-lg" do %>
+      <span class="font-bold">
+        <%= user.following.count %>
+      </span>
+      フォロー中
+    <% end %>
+  </div>

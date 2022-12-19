@@ -1,15 +1,26 @@
-<div class="bg-cyan-400 flex justify-center">
-  <div class="container aspect-[5/1] bg-slate-500 items-center">
-    <%= image_tag @user.avatar.url, class: 'rounded-full object-center' %>
-    <%= @user.name %>
-    <%= render 'shared/stats', {user: @user} %>
-    <%= render 'follow_form' if logged_in? %>
-    <% if current_user?(@user) %>
-    <button class="my-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-20 text-center">
-      <%= link_to t('defaults.edit'), edit_profile_path %>
-    </button>
-      <p><%= link_to (t 'defaults.logout'), logout_path, data: { turbo_method: :delete } %></p>
-    <% end %>
+<div class="bg-cyan-400 flex justify-center pt-5">
+  <div class="w-3/5 bg-slate-500 items-center">
+    <div class="flex">
+      <%= image_tag @user.avatar.url, class: 'rounded-full object-center' %>
+      <div class="mt-1 ml-4">
+        <div class="font-bold text-xl"><%= @user.name %></div>
+        <div class="text-sm -mt-1"><%= "@#{@user.username}" %></div>
+        <div class="mt-2">
+          <% if current_user?(@user) %>
+            <%= link_to t('defaults.user_edit'), edit_profile_path, class: "w-1/6 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold px-1 py-2 text-center" %>
+            <%= link_to t('defaults.logout'), logout_path, class: "w-1/6 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold px-1 py-2 text-center",
+            data: { turbo_method: :delete } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <%= @user.bio %>
+    </div>
+    <div class="mt-8 flex items-center">
+      <%= render 'shared/stats', {user: @user} %> 
+      <%= render 'follow_form' if logged_in? %>
+    </div>
     
   </div>
 </div>

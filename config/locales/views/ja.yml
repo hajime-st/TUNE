@@ -3,7 +3,7 @@ ja:
     register: '登録'
     login: 'ログイン'
     logout: 'ログアウト'
-    user_edit: 'ユーザー編集'
+    user_edit: 'プロフィール編集'
     edit: '編集'
     post: '投稿'
     delete: '削除'
@@ -11,6 +11,9 @@ ja:
     new:
       title: 'サインアップ'
       to_login_page: 'ログイン'
+    show:
+      follow: 'フォロー'
+      following: 'フォロー中'
   user_sessions:
     new:
       title: 'ログイン'

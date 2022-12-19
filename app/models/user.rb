@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   VALID_USERNAME_REGEX = /\A(?!\.)[\w.]+(?<!\.)\z/
   validates :username, presence: true, uniqueness: true, length: { maximum: 20 }, format: { with: VALID_USERNAME_REGEX, message: "は英数字、アンダーバーのみ使用できます" }
+  validates :bio, length: { maximum: 160 }
 
 
 

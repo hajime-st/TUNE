@@ -17,7 +17,7 @@ class ThemesController < ApplicationController
     elsif !params[:theme][:tag_names].nil? && @theme.save_with_tags(tag_names: params.dig(:theme, :tag_names).gsub(' ', '').split('#').uniq.reject(&:blank?))
       redirect_to themes_path
     else
-      @theme.tags.first.valid?
+      @theme.valid?
       render :new, status: :unprocessable_entity
     end
   end
