@@ -1,6 +1,8 @@
-<%# binding.pry %>
-<% if !my_answer.present? %>
-  <%= button_to "この曲で解答する", theme_answers_path(theme), {params: {answer: "#{song.id}"}} %>
-<% else %>
-  <%= button_to "解答を更新する", theme_answer_path(theme, my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
-<% end %>
+<div class="flex justify-center">
+  <% if !my_answer.present? %>
+    <%= link_to "この曲で解答する", theme_answers_path(theme, answer: "#{song.id}"), data: { turbo_method: :post },
+        class:"mt-5 w-1/2 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-3 text-center" %>
+  <% else %>
+    <%= button_to "解答を更新する", theme_answer_path(theme, my_answer), {method: 'patch', params: {answer: "#{song.id}"}} %>
+  <% end %>
+</div>
