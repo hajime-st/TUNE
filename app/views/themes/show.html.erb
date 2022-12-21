@@ -1,9 +1,9 @@
-<div class="flex flex-col lg:flex-row items-center lg:items-start p-4">
+<div class="flex flex-col items-center pt-4 pb-10">
   <%# お題画像 %>
   <%= image_tag @theme.image_url, {class:"w-1/2 md:w-2/5 lg:w-1/4" } if @theme.image_url %>
 
   <%# お題 %>
-  <h2 class="md:text-xl font-semibold"><%= "お題: #{@theme.title}" %></h2>
+  <h2 class="mt-4 md:text-xl font-semibold"><%= "お題: #{@theme.title}" %></h2>
 
   <%# ジャンル %>
   <h3 class="md:text-l"><%= "ジャンル: #{@theme_genre.first}" if @theme_genre.present? %></h3>
@@ -21,11 +21,9 @@
   </div>
 </div>
   
-<div class="flex flex-col">
+<div class="flex flex-col w-1/2 border border-black mx-auto mb-10">
   <%# 解答一覧 %>
-  <div class="flex flex-col items-center">
-    <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
-  </div>
+  <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
 </div>
 
     <%# コメントフォーム %>

@@ -1,14 +1,29 @@
-<div class="px-48 flex flex-col items-center">
-  <%= form_with url: new_theme_answer_path, method: :get, html: { data: { turbo_frame: "song_search" } } do |form| %>
-    <div class="text-m md:text-xl">曲名、アーティスト名で検索</div>
-    <%= form.text_field :search %>
-    <%= form.submit (t 'themes.search.search'), name: nil %>
-  <% end %>
+<div class="mx-auto container flex flex-col pt-10">
+    <%= form_with url: new_theme_answer_path, method: :get, html: { data: { turbo_frame: "song_search" } } do |form| %>
+    <div class="flex flex-col items-center">
+      <div class="text-xl md:text-2xl mb-5 mr-11 md:mr-4 lg:mr-0">曲を検索して解答を投稿する</div>
+      <div class="flex w-full justify-center">
+        <%= form.text_field :search, placeholder:"曲名、アーティスト名で検索", autocomplete: 'off',
+            class: "w-full md:w-6/10 lg:w-1/2 mt-2 border-black border-2 rounded py-3 px-3 leading-tight focus:bg-white focus:border-black focus:ring-0 placeholder-gray-800 appearance-none" %>
+        <%= button_tag(type: "submit", class: "pl-1 pr-4 pt-1 md:pl-2") do %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        <% end %>
+      </div>
+      <% end %>
 </div>
 
-<div class="px-4 md:px-44 lg:px-64 xl:px-80 2xl:px-96">
+<div class="px-4 md:px-36 lg:px-64 xl:px-80 2xl:px-96">
   <%= turbo_frame_tag "song_search" do %>
-    <h4><%= "#{(t 'themes.search.result')}: #{@search_params}" %></h4>
+    <div class="flex flex-col items-center text-center">
+      <% if @search_params %>
+        <div class="text-lg mt-5"><%= (t 'themes.search.result') %></div>
+        <div class="font-bold text-2xl mt-1 mb-4"><%= @search_params %></div>
+      <% end %>
+    </div>
     <% if @songs %>
       <% @songs.each do |song| %>
       <div class="my-4">
@@ -28,5 +43,4 @@
       <% end %>
     <% end %>
   <% end %>
-  <%# if @theme_genre.empty? || !song.artists.first.genres.grep(/#{@theme_genre.second}/).empty? || !song.artists.first.genres.grep(/#{@theme_genre.third}/).empty? %>
 </div>
