@@ -4,7 +4,7 @@
     <div class="mt-5">
       <%= f.label :name, class: "text-m font-bold" %>
       <% unless @user.errors.include?(:name) %>
-        <%= f.text_field :name, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+        <%= f.text_field :name, class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
       <% else %>
         <%= f.text_field :name, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:name).first %></p>
@@ -13,7 +13,7 @@
     <div class="mt-5">
       <%= f.label :email, class: "text-m font-bold" %>
       <% unless @user.errors.include?(:email) %>
-        <%= f.email_field :email, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+        <%= f.email_field :email, class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
       <% else %>
         <%= f.email_field :email, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:email).first %></p>
@@ -22,7 +22,7 @@
     <div class="mt-5">
       <%= f.label :username, class: "text-m font-bold" %>
       <% unless @user.errors.include?(:username) %>
-        <%= f.text_field :username, placeholder: '英数字,アンダーバーのみ使用できます', class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+        <%= f.text_field :username, placeholder: '英数字,アンダーバーのみ使用できます', class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
       <% else %>
         <%= f.text_field :username, placeholder: '英数字,アンダーバーのみ使用できます', class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:username).first %></p>
@@ -32,7 +32,7 @@
     <div class="mt-5">
       <%= f.label :password, class: "text-m font-bold" %>
       <% unless @user.errors.include?(:password) %>
-        <%= f.password_field :password, placeholder: '6文字以上', class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+        <%= f.password_field :password, placeholder: '6文字以上', class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
       <% else %>
         <%= f.password_field :password, placeholder: '6文字以上', class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:password).first %></p>
@@ -41,7 +41,7 @@
     <div class="mt-5">
       <%= f.label :password_confirmation, class: "text-m font-bold" %>
       <% unless @user.errors.include?(:password_confirmation) %>
-        <%= f.password_field :password_confirmation, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+        <%= f.password_field :password_confirmation, class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
       <% else %>
         <%= f.password_field :password_confirmation, class: "block mt-2 border border-red-500 rounded-sm w-full py-3 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>

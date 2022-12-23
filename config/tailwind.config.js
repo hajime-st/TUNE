@@ -1,22 +1,26 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
+  darkMode: false,
   content: [
-    './public/*.html',
+    './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}'
+    './app/assets/stylesheets/**/*.css',
+    './app/javascript/**/*.js'
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        fancy: ["Dancing Script"],
+        fantasy: "fantasy",
+        meiryo: "HiraKakuProN-W6",
+        arial: "Arial Black"
       },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-  ]
+    require("daisyui")
+  ],
+  daisyui: {
+    themes: ["light"],
+    darkTheme: "light",
+  }
 }

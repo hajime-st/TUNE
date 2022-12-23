@@ -3,11 +3,11 @@
     <p class="text-2xl md:text-4xl text-center md:text-left font-bold border-b pb-2 w-full"><%= t 'defaults.login' %></p>
     <div class="mt-5">
       <%= f.label :email, User.human_attribute_name(:email), class: "text-m font-bold" %>
-      <%= f.text_field :email, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight" %>
+      <%= f.text_field :email, class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
     </div>
     <div class="mt-5">
       <%= f.label :password, User.human_attribute_name(:password), class: "text-m font-bold" %>
-      <%= f.password_field :password, class: "block mt-2 border rounded-sm w-full py-3 px-3 leading-tight"  %>
+      <%= f.password_field :password, class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight"  %>
     </div>
     <div class="mt-2 text-red-500"><%= flash.now[:danger] %></div>
     <button class="mt-7 mb-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
