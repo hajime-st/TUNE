@@ -154,6 +154,8 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
@@ -382,6 +384,7 @@ DEPENDENCIES
   fog-aws
   html2slim
   importmap-rails
+  impressionist (~> 1.6.1)
   jbuilder
   jsbundling-rails (~> 0.1.0)
   kaminari

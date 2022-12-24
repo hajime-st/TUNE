@@ -53,6 +53,7 @@ gem "tailwindcss-rails"
 #Pagenation
 gem 'kaminari'
 
+
 #Search feature
 #gem 'ransack'
 
