@@ -7,10 +7,10 @@
         <% end %>
       </span>
     </div>
-    <div class="lg:text-lg flex flex-nowrap items-center whitespace-pre">
-      <%= link_to (t 'themes.index.title'), themes_path, {class: "font-serif pr-2 md:pr-6 lg:pr-8"} %>
-      <%= link_to (t 'themes.new.title'), new_theme_path, {class: "font-serif pr-2 md:pr-6 lg:pr-8"} %>
-      <%= link_to user_path(current_user.username), {class: "flex"} do %>
+    <div class="lg:text-lg flex flex-nowrap items-center whitespace-pre py-1">
+      <%= link_to (t 'themes.index.title'), themes_path, {class: "font-serif pr-2 md:pr-4 lg:pr-4 tracking-wider"} %>
+      <%= link_to (t 'themes.new.title'), new_theme_path, {class: "font-serif pr-2 md:pr-6 lg:pr-7 tracking-wider"} %>
+      <%= link_to user_path(current_user.username), {class: "flex pr-2"} do %>
         <%= image_tag current_user.avatar.url, class:'w-9 rounded-full'  %>
       <% end %>
   </nav>
