@@ -1,9 +1,11 @@
-<div class="flex flex-col px-5 border-b">
+<div class="flex flex-col px-5 border-b border-emerald-400">
   <div class="flex items-center my-3">
     <%= link_to image_tag(answer.user.avatar.url, class:'rounded-full w-11'), user_path(current_user.username), {class:"w-11" } %>
-    <%= link_to answer.user.name, user_path(current_user.username), {class:"ml-2" } %>
+    <%= link_to answer.user.name, user_path(current_user.username), {class:"ml-2"} %>
   </div>
-  <iframe class="" style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= answer.answer %>?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe class="mb-2" style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/<%= answer.answer %>?utm_source=generator" width="100%" height="152" 
+          frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
   <div class="self-center">
     <% if current_user %>
