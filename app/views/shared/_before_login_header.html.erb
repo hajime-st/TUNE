@@ -1,15 +1,14 @@
 <header>
-  <nav class="flex items-center w-screen justify-between bg-white border-b border-gray-200 pl-7 pr-2 md:pr-6 lg:pr-10  py-2.5">
+  <nav class="flex items-center w-screen justify-between bg-white border-b border-gray-200 pl-7 pr-2 md:pr-6 lg:pr-10 py-2.5">
     <div class="flex items-center flex-shrink-0 text-black">
-      <span class="font-semibold text-4xl tracking-wide">
+      <span class="font-extrabold text-4xl tracking-wide">
         <%= link_to root_path do %>
           TUNE
         <% end %>
       </span>
     </div>
-    <div class="lg:text-lg flex flex-nowrap items-center whitespace-pre">
-      <%= link_to (t 'themes.index.title'), themes_path, {class: "pr-2 md:pr-6 lg:pr-9"} %>
-      <%= link_to (t 'defaults.login'), login_path, {class: ""} %>
-    <div>
+    <div class="lg:text-lg flex flex-nowrap items-center">
+      <%= link_to (t 'themes.index.title'), themes_path, {class: "font-serif pr-2 md:pr-6 lg:pr-9"} %>
+      <%= link_to (t 'users.new.title'), new_user_path	, {class: "font-serif"} %>
   </nav>
 </header>

@@ -10,9 +10,9 @@ module.exports = {
     extend: {
       fontFamily: {
         fancy: ["Dancing Script"],
-        fantasy: "fantasy",
         meiryo: "HiraKakuProN-W6",
-        arial: "Arial Black"
+        arial: "Arial Black",
+        serif: "sans-serif"
       },
     },
   },

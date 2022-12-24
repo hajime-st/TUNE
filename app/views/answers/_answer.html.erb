@@ -12,9 +12,9 @@
       <% end %>
       <div>
         <% if current_user.like?(answer) %>
-          <%#= render 'unlike', { answer: answer } %>
+          <%= render 'unlike', { answer: } %>
         <% else %>
-          <%#= render 'like', { answer: answer } %>
+          <%= render 'like', { answer: } %>
         <% end %>
       </div>
     <% end %>
