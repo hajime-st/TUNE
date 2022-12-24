@@ -53,9 +53,8 @@ gem "tailwindcss-rails"
 #Pagenation
 gem 'kaminari'
 
-
 #Search feature
-#gem 'ransack'
+gem 'ransack'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
