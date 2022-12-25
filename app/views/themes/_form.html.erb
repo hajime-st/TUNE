@@ -41,18 +41,18 @@
                     class: "mt-2 w-2/3 lg:w-1/2 py-2 pl-2 border border-black rounded-sm leading-tight cursor-pointer" %>
       </p>
     </div>
-    <div class="mt-5">
-      <%= f.label :tag_names, Tag.human_attribute_name(:name), class: "text-m font-bold" %>
-      <span class="text-xs italic text-slate-500 ml-1">任意</span>
-      <% if theme.tags.empty? || !theme.tags.first.errors.include?(:name) %>
-        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
-        class: "mt-2 p-2 border border-black w-full rounded-sm" %></p>
-      <% elsif theme.tags.first.errors.include?(:name) %>
-        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
-        class: "mt-2 p-2 border border-red-500 w-full rounded-sm" %></p>
-        <p class="text-red-500 text-xs italic"><%= theme.tags.first.errors.full_messages_for(:name).first %></p>
-      <% end %>
-    </div>
+    <%# <div class="mt-5"> %>
+      <%#= f.label :tag_names, Tag.human_attribute_name(:name), class: "text-m font-bold" %>
+      <%# <span class="text-xs italic text-slate-500 ml-1">任意</span> %>
+      <%# <% if theme.tags.empty? || !theme.tags.first.errors.include?(:name) %>
+        <%# <p><%= f.text_field :tag_names, placeholder: '#MUSIC', %>
+        <%# class: "mt-2 p-2 border border-black w-full rounded-sm" </p> %>
+      <%# <% elsif theme.tags.first.errors.include?(:name) %>
+        <%# <p><%= f.text_field :tag_names, placeholder: '#MUSIC', %>
+        <%# class: "mt-2 p-2 border border-red-500 w-full rounded-sm" </p> %>
+        <%# <p class="text-red-500 text-xs italic"><%= theme.tags.first.errors.full_messages_for(:name).first </p> %>
+      <%# <% end %>
+    <%# </div> %>
     <div class="mt-5">
       <div class="flex items-center">
         <%= f.label :image, '画像', class: "text-m font-bold" %>

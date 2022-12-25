@@ -4,12 +4,12 @@
       <%= image_tag theme.image_url, {class:"object-contain aspect-square overflow-hidden flex-none opacity-100 hover:opacity-75"} %>
     <% end %>
     <div class="">
-      <div class="truncate font-bold text-m md:text-md lg:text-lg xl:text-xl 2xl:text-2xl border-b p-1"><%= link_to theme.title, theme_path(theme) %></div>
+      <div class="truncate font-bold text-m md:text-md lg:text-lg xl:text-xl 2xl:text-2xl border-b p-1 hover:opacity-75"><%= link_to theme.title, theme_path(theme) %></div>
       <%= link_to user_path(theme.user.username), {class: "flex items-center mt-1"} do %>
-        <%= image_tag theme.user.avatar.url, class:'w-7 rounded-full ml-1'  %>
-        <span class="ml-1 text-lg"><%= theme.user.name %></span>
+        <%= image_tag theme.user.avatar.url, class:'w-8 2xl:w-9 rounded-full ml-1'  %>
+        <span class="ml-1 text-lg hover:opacity-75"><%= theme.user.name %></span>
       <% end %>
-      <div class="ml-1 text-sm xl:text-m text-neutral-500"><%= l theme.created_at %></div>
+      <div class="ml-1 mt-1 text-sm xl:text-m text-neutral-500"><%= l theme.created_at %></div>
     </div>
   </div>
 </div>

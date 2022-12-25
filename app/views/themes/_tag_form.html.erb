@@ -1,0 +1,31 @@
+タグ機能を戻すときにコメントアウト部分に貼り付ける
+
+<%# ここから_form %>
+<div class="mt-5">
+      <%= f.label :tag_names, Tag.human_attribute_name(:name), class: "text-m font-bold" %>
+      <span class="text-xs italic text-slate-500 ml-1">任意</span>
+      <% if theme.tags.empty? || !theme.tags.first.errors.include?(:name) %>
+        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
+        class: "mt-2 p-2 border border-black w-full rounded-sm" %></p>
+      <% elsif theme.tags.first.errors.include?(:name) %>
+        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
+        class: "mt-2 p-2 border border-red-500 w-full rounded-sm" %></p>
+        <p class="text-red-500 text-xs italic"><%= theme.tags.first.errors.full_messages_for(:name).first %></p>
+      <% end %>
+</div>
+<%# ここまで_form %>
+
+<%# ここから_form_edit %>
+<div class="mt-5">
+      <%= f.label :tag_names, Tag.human_attribute_name(:name), class: "text-m font-bold" %>
+      <span class="text-xs italic text-slate-500 ml-1">任意</span>
+      <% if theme.tags.empty? || !theme.tags.first.errors.include?(:name) %>
+        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
+        class: "mt-2 p-2 border border-black w-full rounded-sm leading-tight" %></p>
+      <% elsif theme.tags.first.errors.include?(:name) %>
+        <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
+        class: "mt-2 p-2 border border-red-500 w-full rounded-sm leading-tight" %></p>
+        <p class="text-red-500 text-xs italic"><%= theme.tags.first.errors.full_messages_for(:name).first %></p>
+      <% end %>
+    </div>
+<%# ここまで_form_edit %>

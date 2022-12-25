@@ -3,7 +3,7 @@
     <div class="font-arial whitespace-pre-line font-bold text-4xl tracking-wider">お題を通して
         ベストな曲と出会う
     </div>
-    <%= link_to "お題を探す", themes_path, class:"bg-black text-white px-2 py-3 text-center font-bold text-lg w-1/3 mt-4 tracking-wider" %>
+    <%= link_to "お題を探す", themes_path, class:"bg-black text-white w-1/2 py-2 text-center font-bold text-lg mt-4 tracking-wider hover:opacity-80" %>
   </div>
   <%= image_tag 'top.png', class:" self-auto h-80" %>
   <%# <div class="font-extrabold text-9xl tracking-wide self-center">TUNE</div> %>
@@ -14,14 +14,14 @@
 <div>
 
   <div class="flex mx-20 xl:mx-26 2xl:mx-48">
-    <%= link_to "最近投稿されたお題", themes_path, class:"font-meiryo bg-blue-500 text-black hover:bg-black hover:text-blue-500 px-2 py-3 text-center whitespace-nowrap lg:text-2xl xl:text-2xl 2xl:text-4xl tracking-wider"%>
+    <%= link_to "最近投稿されたお題", themes_path, class:"font-meiryo bg-blue-500 text-black hover:bg-black hover:text-blue-500 px-2 py-3 text-center whitespace-nowrap lg:text-2xl xl:text-3xl 2xl:text-4xl tracking-wider"%>
   </div>
   <%# <div class="grid grid-cols-3 gap-6 px-48 pt-5"> %>
   <div class="grid grid-cols-4 gap-6 px-20 xl:px-26 2xl:px-48 pt-5">
     <%= render @recent_themes %>
   </div>
 
-  <div class="flex justify-center xl:px-36 2xl:px-48 pt-5">
+  <div class="flex justify-center px-20 xl:px-26 2xl:px-48 pt-5">
     <%= link_to "最近投稿されたお題をもっと見る", themes_path, class:"mt-10 font-meiryo w-f rounded-full bg-blue-500 text-black hover:bg-black hover:text-blue-500 px-1 py-3 text-center text-2xl w-full"%>
   </div>
 </div>

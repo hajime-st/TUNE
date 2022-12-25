@@ -7,7 +7,7 @@
 <% end %>
 <div class="flex flex-col items-center mt-4">
   <%# お題画像 %>
-  <%= image_tag @theme.image_url, {class:"w-1/2 md:w-2/5 lg:w-3/10 xl:w-1/4" } if @theme.image_url %>
+  <%= image_tag @theme.image_url, {class:"w-1/2 md:w-2/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4"} if @theme.image_url %>
 
   <%# お題 %>
   <h2 class="mt-5 md:text-2xl font-semibold"><%= @theme.title %></h2>
