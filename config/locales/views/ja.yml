@@ -19,6 +19,11 @@ ja:
       title: 'ログイン'
       to_register_page: 'サインアップ'
       password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
   themes:
     index:
       title: 'お題一覧'
@@ -31,8 +36,7 @@ ja:
       result: '検索結果'
     edit:
       title: 'お題編集'
-  views:
-    pagination:
-      previous: "« 前ページ"
-      next: "次ページ »"
-      truncate: "..."
+  # views:
+  #   pagination:
+  #     previous: "« 前ページ"
+  #     next: "次ページ »"

@@ -18,8 +18,8 @@
       <%= @user.bio %>
     </div>
     <div class="mt-8 flex items-center">
-      <%= render 'shared/stats', {user: @user} %> 
-      <%= render 'follow_form' if logged_in? %>
+      <%= render 'shared/follow_stats', {user: @user} %> 
+      <%= render 'follow_form', {user: @user} if logged_in? %>
     </div>
     
   </div>

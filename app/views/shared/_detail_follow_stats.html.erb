@@ -1,0 +1,5 @@
+<% user ||= current_user %>
+  <div class="w-full flex justify-evenly">
+    <%= link_to "フォロワー", followers_user_path(user.username), class:"w-1/2 text-lg text-center border-b" %>
+    <%= link_to "フォロー中", following_user_path(user.username), class:"w-1/2 text-lg text-center" %>
+  </div>
