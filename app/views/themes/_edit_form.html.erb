@@ -4,7 +4,7 @@
     <div class="mt-5">
       <%= f.label :title, class: "text-m font-bold" %>
       <% unless theme.errors.include?(:title)  %>
-        <%= f.text_field :title, class: "mt-2 border rounded-sm w-full py-2 px-3 leading-tight" %>
+        <%= f.text_field :title, class: "mt-2 border border-black rounded-sm w-full py-2 px-3 leading-tight" %>
       <% else %>
         <%= f.text_field :title, class: "mt-2 border border-red-500 rounded-sm w-full py-2 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= theme.errors.full_messages_for(:title).first %></p>
@@ -16,7 +16,7 @@
         <span class="text-xs italic text-slate-500 ml-2">任意</span>
       </div>
       <% unless theme.errors.include?(:description)  %>
-        <%= f.text_area :description, rows: 4, class: "mt-2 border rounded-sm w-full py-2 px-3 leading-tight" %>
+        <%= f.text_area :description, rows: 4, class: "mt-2 border border-black rounded-sm w-full py-2 px-3 leading-tight" %>
       <% else %>
         <%= f.text_area :description, rows: 4, class: "mt-2 border border-red-500 rounded-sm w-full py-2 px-3 leading-tight" %>
         <p class="text-red-500 text-xs italic"><%= theme.errors.full_messages_for(:description).first %></p>
@@ -25,7 +25,7 @@
     <div class="mt-5">
       <div class="flex items-center">
         <%= f.label :genre, 'ジャンル', class: "text-m font-bold" %>
-        <span class="text-xs italic text-slate-500 ml-2">任意</span>
+        <span class="text-xs italic text-slate-500 ml-2">変更不可</span>
       </div>
       <p><%= f.select :genre,
                     [
@@ -37,7 +37,7 @@
                       ['クラシック', 'クラシック,composition,classical'], ['ジャズ', 'ジャズ,jazz']
                     ],
                     { prompt: '全てのジャンル' }, disabled: true,
-                    class: "mt-2 w-2/3 lg:w-1/2 py-2 pl-2 rounded-sm leading-tight cursor-pointer" %>
+                    class: "mt-2 w-2/3 lg:w-1/2 py-2 pl-2 border border-black rounded-sm leading-tight cursor-pointer" %>
       </p>
     </div>
     <div class="mt-5">
@@ -45,10 +45,10 @@
       <span class="text-xs italic text-slate-500 ml-1">任意</span>
       <% if theme.tags.empty? || !theme.tags.first.errors.include?(:name) %>
         <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
-        class: "mt-2 border w-full rounded-sm leading-tight" %></p>
+        class: "mt-2 p-2 border border-black w-full rounded-sm leading-tight" %></p>
       <% elsif theme.tags.first.errors.include?(:name) %>
         <p><%= f.text_field :tag_names, placeholder: '#MUSIC',
-        class: "mt-2 border border-red-500 w-full rounded-sm leading-tight" %></p>
+        class: "mt-2 p-2 border border-red-500 w-full rounded-sm leading-tight" %></p>
         <p class="text-red-500 text-xs italic"><%= theme.tags.first.errors.full_messages_for(:name).first %></p>
       <% end %>
     </div>

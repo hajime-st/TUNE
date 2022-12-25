@@ -1,4 +1,10 @@
 <div class="mb-28">
+<% if current_user %>
+  <div class="flex justify-end mr-4 space-x-5">
+    <%= link_to '編集', edit_theme_path(@theme) if current_user.own?(@theme) %>
+    <%= link_to '削除する', theme_path(@theme), data: { turbo_method: :delete } if current_user.own?(@theme) %>
+  </div>
+<% end %>
 <div class="flex flex-col items-center mt-4">
   <%# お題画像 %>
   <%= image_tag @theme.image_url, {class:"w-1/2 md:w-2/5 lg:w-3/10 xl:w-1/4" } if @theme.image_url %>
@@ -28,7 +34,7 @@
 </div>
 
 <% if !@answers.empty? %>
-  <div class="flex flex-col w-1/2 border border-green-500 rounded-md mx-auto mb-10">
+  <div class="flex flex-col w-1/2 border border-black rounded-md mx-auto mb-10">
     <%# 解答一覧 %>
     <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
   </div>
