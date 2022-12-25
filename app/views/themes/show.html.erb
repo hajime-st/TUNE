@@ -2,7 +2,7 @@
 <% if current_user %>
   <div class="flex justify-end mr-4 space-x-5">
     <%= link_to '編集', edit_theme_path(@theme) if current_user.own?(@theme) %>
-    <%= link_to '削除する', theme_path(@theme), data: { turbo_method: :delete } if current_user.own?(@theme) %>
+    <%= button_to '削除する', theme_path(@theme),{ method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" }}} if current_user.own?(@theme) %>
   </div>
 <% end %>
 <div class="flex flex-col items-center mt-4">
