@@ -13,10 +13,18 @@
   <%# <div>
     タグ：<%= render @theme.tags %>
   <%# </div> %>
-</div>
 
-<div class="flex justify-center mx-auto w-1/5 mt-8 mb-10">
-  <%= link_to "解答を投稿する", new_theme_answer_path(@theme), class:"font-meiryo w-full rounded-full bg-green-500 text-black hover:bg-black hover:text-green-500 px-1 py-2 text-center text-xl"%>
+    <div class="flex justify-center mx-auto w-1/5 mt-8 mb-10">
+      <%= link_to "解答を投稿する", new_theme_answer_path(@theme), class:"font-meiryo w-full rounded-full bg-green-500 text-black hover:bg-black hover:text-green-500 px-1 py-2 text-center text-xl"%>
+    </div>
+    
+    <% if !@answers.empty? %>
+      <div class="flex self-center text-sm mb-1">
+        ※PCの方は
+        <div class="text-green-500 italic"><%= link_to "Spotify", "https://accounts.spotify.com/ja/login", target: :_blank, rel: "noopener noreferrer" %></div>
+        にログインすることで楽曲がフルで聴けます。
+      </div>
+    <% end %>
 </div>
 
 <% if !@answers.empty? %>
@@ -24,14 +32,17 @@
     <%# 解答一覧 %>
     <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
   </div>
+
+  <%# コメントフォーム %>
+  <%# if current_user %>
+    <%# <div class="flex w-1/2 mx-auto"> %>
+      <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
+    <%# </div> %>
+  <%# end %>
+
+  <%# コメントエリア %>
+  <%# <h4>コメント一覧</h4> %>
+  <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>
 <% end %>
 
-    <%# コメントフォーム %>
-    <%# if current_user %>
-      <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
-    <%# end %>
-
-    <%# コメントエリア %>
-    <%# <h4>コメント一覧</h4> %>
-    <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>
 </div>

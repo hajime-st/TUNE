@@ -12,12 +12,15 @@ module.exports = {
         fancy: ["Dancing Script"],
         meiryo: "HiraKakuProN-W6",
         arial: "Arial Black",
-        serif: "sans-serif"
+        serif: "sans-serif",
+        verdana: "Verdana",
+        comic: "Comic Sans MS",
       },
     },
   },
   plugins: [
-    require("daisyui")
+    require('@tailwindcss/line-clamp'),
+    require("daisyui"),
   ],
   daisyui: {
     themes: ["light"],

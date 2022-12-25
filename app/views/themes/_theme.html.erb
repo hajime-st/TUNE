@@ -1,15 +1,15 @@
-<div class="col-span-1 justify-center justify-self-center border-2 border-black p-1">
+<div class="col-span-1 border-2 border-black p-1">
   <div class="container aspect-[4/5] flex flex-col">
     <%= link_to theme_path(theme) do %>
-      <%= image_tag theme.image_url, {class:"object-contain aspect-square overflow-hidden flex-none opacity-100 hover:opacity-75" } if theme.image_url %>
+      <%= image_tag theme.image_url, {class:"object-contain aspect-square overflow-hidden flex-none opacity-100 hover:opacity-75"} %>
     <% end %>
-    <div>
-      <div class="font-bold text-2xl bg-cover break-all border-b p-1"><%= link_to theme.title, theme_path(theme) %></div>
+    <div class="">
+      <div class="truncate font-bold text-m md:text-md lg:text-lg xl:text-xl 2xl:text-2xl border-b p-1"><%= link_to theme.title, theme_path(theme) %></div>
       <%= link_to user_path(theme.user.username), {class: "flex items-center mt-1"} do %>
         <%= image_tag theme.user.avatar.url, class:'w-7 rounded-full ml-1'  %>
         <span class="ml-1 text-lg"><%= theme.user.name %></span>
       <% end %>
-      <div class="ml-1 text-m text-neutral-500"><%= l theme.created_at %></div>
+      <div class="ml-1 text-sm xl:text-m text-neutral-500"><%= l theme.created_at %></div>
     </div>
   </div>
 </div>
