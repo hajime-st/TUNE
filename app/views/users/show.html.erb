@@ -1,5 +1,5 @@
-<div class="bg-cyan-400 flex justify-center pt-5 h-screen">
-  <div class="w-3/5 bg-slate-500 items-center">
+<div class="bg-white flex justify-center pt-5 h-screen">
+  <div class="w-3/5 bg-white items-center">
     <div class="flex">
       <%= image_tag @user.avatar.url, class: 'rounded-full object-center' %>
       <div class="mt-1 ml-4">
@@ -18,8 +18,8 @@
       <%= @user.bio %>
     </div>
     <div class="mt-8 flex items-center">
-      <%= render 'shared/follow_stats', {user: @user} %> 
-      <%= render 'follow_form', {user: @user} if logged_in? %>
+      <%#= render 'shared/follow_stats', {user: @user} %> 
+      <%#= render 'follow_form', {user: @user} if logged_in? %>
     </div>
     
   </div>

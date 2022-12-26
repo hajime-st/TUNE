@@ -12,7 +12,6 @@ class AnswersController < ApplicationController
     Theme.find(params[:theme_id]).genre.split(",").each do |genre|
       @theme_genre << Regexp.new(genre)
     end
-
   end
 
   def create
