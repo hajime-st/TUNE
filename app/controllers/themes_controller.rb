@@ -11,11 +11,11 @@ class ThemesController < ApplicationController
 
   def create
     @theme = current_user.themes.build(theme_params)
-    # binding.pry
-    if params[:theme][:tag_names].empty? && @theme.save && @theme.valid?
-      redirect_to themes_path
-    elsif !params[:theme][:tag_names].nil? && @theme.save_with_tags(tag_names: params.dig(:theme, :tag_names).gsub(' ', '').split('#').uniq.reject(&:blank?))
-      redirect_to themes_path
+    # if params[:theme][:tag_names].empty? && @theme.save && @theme.valid?
+    if @theme.save
+      redirect_to theme_path(@theme)
+    # elsif !params[:theme][:tag_names].nil? && @theme.save_with_tags(tag_names: params.dig(:theme, :tag_names).gsub(' ', '').split('#').uniq.reject(&:blank?))
+      # redirect_to themes_path
     else
       @theme.valid?
       render :new, status: :unprocessable_entity
