@@ -21,7 +21,7 @@
 <div class="px-4 md:px-36 lg:px-64 xl:px-80 2xl:px-96">
   <%= turbo_frame_tag "song_search" do %>
     <div class="flex flex-col items-center text-center">
-      <% if @search_params %>
+      <% if @search_params && !@search_params.empty? %>
         <div class="text-lg mt-5"><%= (t 'themes.search.result') %></div>
         <div class="font-bold text-2xl mt-1 mb-4"><%= @search_params %></div>
       <% end %>
@@ -38,7 +38,7 @@
           <% elsif @theme_genre.first != "洋楽" && genre_include?(song.artists.first.genres, @theme_genre) %>
             <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
           <% else %>
-            この曲はジャンル対象外です
+            <div class="text-center text-lg font-bold mt-4 mb-1 lg:my-8">この曲はジャンル対象外です</div>
           <% end %>
         <% end %>
       </div>
