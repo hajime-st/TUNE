@@ -1,4 +1,8 @@
 <% flash.each do |message_type, message| %>
+  <%# binding.pry %>
+  <% if message == "メールアドレスまたはパスワードが違います。" %>
+    <% break %>
+  <% end %>
   <div class="flex justify-center mt-2">
     <div class="alert w-1/2 text-center bg-red-400"><%= message %></div>
   </div>
