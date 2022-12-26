@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path
     else
-      flash.now[:danger] = "メールアドレスまたはパスワードが違います。"
+      # flash.now[:danger] = "メールアドレスまたはパスワードが違います。"
       render :new, status: :unprocessable_entity
     end
   end
