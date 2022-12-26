@@ -39,7 +39,8 @@ class ThemesController < ApplicationController
     if @theme.update(theme_params)
       redirect_to theme_path(@theme)
     else
-      render :edit
+      @theme.valid?
+      render :edit, status: :unprocessable_entity
     end
   end
 

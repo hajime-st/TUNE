@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_action :require_login
+
   def new
     if params[:search]
       @search_params = params[:search]
@@ -40,5 +42,9 @@ class AnswersController < ApplicationController
 
   def answer_params
     params.permit(:answer).merge(theme_id: params[:theme_id])
+  end
+
+  def redirect_root
+    redirect_to root_path unless current_user
   end
 end
