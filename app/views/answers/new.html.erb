@@ -2,7 +2,7 @@
     <%= form_with url: new_theme_answer_path, method: :get, html: { data: { turbo_frame: "song_search" } } do |form| %>
     <div class="flex flex-col items-center">
       <div class="text-xl md:text-2xl mb-3">曲を検索して解答を投稿する</div>
-      <div class="text-sm">1つのお題につき1人1曲のみ回答できます。</div>
+      <div class="text-sm">曲名だけでヒットしない場合は「曲名 アーティスト名」で検索して下さい。</div>
       <div class="flex w-full justify-center">
         <%= form.text_field :search, placeholder:"曲名、アーティスト名で検索", autocomplete: 'off',
             class: "w-full md:w-6/10 lg:w-1/2 mt-2 border-black border-2 rounded py-3 px-3 leading-tight focus:bg-white focus:border-black focus:ring-0 placeholder-gray-800 appearance-none" %>

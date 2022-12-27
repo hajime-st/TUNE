@@ -29,9 +29,10 @@
     タグ：<%= render @theme.tags %>
   <%# </div> %>
 
-    <div class="flex justify-center mx-auto w-1/5 mt-8 mb-10">
+    <div class="flex justify-center mx-auto w-1/5 mt-8">
       <%= link_to "解答を投稿する", new_theme_answer_path(@theme), class:"font-meiryo w-full rounded-full bg-green-500 text-black hover:bg-black hover:text-green-500 px-1 py-2 text-center text-xl"%>
     </div>
+    <div class="text-sm mb-10">1つのお題につき1人1曲のみ回答できます。</div>
     
     <% if !@answers.empty? %>
       <div class="flex self-center text-sm mb-1">
