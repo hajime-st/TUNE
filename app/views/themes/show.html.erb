@@ -1,64 +1,54 @@
-<head>
-  <meta name="turbo-visit-control" content="reload">
-</head>
-
 <div class="mb-28">
-<% if current_user %>
-  <div class="flex justify-end mr-4 space-x-5">
-    <%= link_to '編集', edit_theme_path(@theme) if current_user.own?(@theme) %>
-    <%= button_to '削除する', theme_path(@theme),{ method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" }}} if current_user.own?(@theme) %>
-  </div>
-<% end %>
-<div class="flex flex-col flex-wrap items-center mt-4">
-  <%# お題画像 %>
-  <%= image_tag @theme.image_url, {class:"w-4/5 md:w-3/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mb-2 2xl:mb-5"} if @theme.image_url %>
+  <div class="flex flex-col flex-wrap items-center mt-4">
+    <%# お題画像 %>
+    <%= image_tag @theme.image_url, {class:"w-4/5 md:w-3/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mb-2 2xl:mb-5"} if @theme.image_url %>
 
-  <%# お題 %>
-  <h2 class="text-xl md:text-2xl font-semibold"><%= @theme.title %></h2>
+    <%# お題 %>
+    <h2 class="text-xl md:text-2xl font-semibold"><%= @theme.title %></h2>
 
-  <%# ジャンル %>
-  <h3 class="md:text-l"><%= "ジャンル: #{@theme_genre.first}" if @theme_genre.present? %></h3>
+    <%# ジャンル %>
+    <h3 class="md:text-l"><%= "ジャンル: #{@theme_genre.first}" if @theme_genre.present? %></h3>
 
-  <%# お題詳細 %>
-  <% if @theme.description.present? %>
-    <div class="text-sm text-center text-gray-500 w-1/2 md:w-2/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mt-4"><%= simple_format(@theme.description) %></div>
-  <% end %>
-
-  <%# タグ %>
-  <%# <div>
-    タグ：<%= render @theme.tags %>
-  <%# </div> %>
-
-    <div class="flex justify-center mx-auto w-4/5 md:w-3/5 lg:w-1/3 2xl:w-1/5 mt-6 2xl:mt-8">
-      <%= link_to "解答を投稿する", new_theme_answer_path(@theme), class:"font-meiryo w-full rounded-full bg-green-500 text-black hover:bg-black hover:text-green-500 px-1 py-2 text-center text-lg md:text-xl"%>
-    </div>
-    <div class="text-sm mt-1 mb-10">1つのお題につき1人1曲のみ回答できます。</div>
-    
-    <% if !@answers.empty? %>
-      <div class="invisible lg:visible flex self-center text-sm mb-1">
-        ※PCの方は
-        <div class="invisible lg:visible text-green-500 italic"><%= link_to "Spotify", "https://accounts.spotify.com/ja/login", target: :_blank, rel: "noopener noreferrer" %></div>
-        にログインすることで楽曲がフルで聴けます。
-      </div>
+    <%# お題詳細 %>
+    <% if @theme.description.present? %>
+      <div class="text-sm text-center text-gray-500 w-1/2 md:w-2/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mt-4"><%= simple_format(@theme.description) %></div>
     <% end %>
-</div>
 
-<% if !@answers.empty? %>
-  <div class="flex flex-col w-2/3 xl:w-7/12 2xl:w-1/2 border border-black rounded-md mx-auto mb-10">
-    <%# 解答一覧 %>
-    <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
+    <%# タグ %>
+    <%# <div>
+      タグ：<%= render @theme.tags %>
+    <%# </div> %>
+
+      <div class="flex justify-center mx-auto w-4/5 md:w-3/5 lg:w-1/3 2xl:w-1/5 mt-6 2xl:mt-8">
+        <%= link_to "解答を投稿する", new_theme_answer_path(@theme), class:"font-meiryo w-full rounded-full bg-green-500 text-black hover:bg-black hover:text-green-500 px-1 py-2 text-center text-lg md:text-xl"%>
+      </div>
+      <div class="text-sm mt-1 mb-10">1つのお題につき1人1曲のみ回答できます。</div>
+      
+      <% if !@answers.empty? %>
+        <div class="invisible lg:visible flex self-center text-sm mb-1">
+          ※PCの方は
+          <div class="invisible lg:visible text-green-500 italic"><%= link_to "Spotify", "https://accounts.spotify.com/ja/login", target: :_blank, rel: "noopener noreferrer" %></div>
+          にログインすることで楽曲がフルで聴けます。
+        </div>
+      <% end %>
   </div>
 
-  <%# コメントフォーム %>
-  <%# if current_user %>
-    <%# <div class="flex w-1/2 mx-auto"> %>
-      <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
-    <%# </div> %>
-  <%# end %>
+  <% if !@answers.empty? %>
+    <div class="flex flex-col w-11/12 md:w-10/12 lg:w-2/3 xl:w-7/12 2xl:w-1/2 border border-black rounded-md mx-auto">
+      <%# 解答一覧 %>
+      <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
+    </div>
 
-  <%# コメントエリア %>
-  <%# <h4>コメント一覧</h4> %>
-  <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>
-<% end %>
+    <%# コメントフォーム %>
+    <%# if current_user %>
+      <%# <div class="flex w-1/2 mx-auto"> %>
+        <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
+      <%# </div> %>
+    <%# end %>
+
+    <%# コメントエリア %>
+    <%# <h4>コメント一覧</h4> %>
+    <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>
+  <% end %>
 
 </div>
