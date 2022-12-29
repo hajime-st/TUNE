@@ -11,10 +11,10 @@
 <% end %>
 <div class="flex flex-col flex-wrap items-center mt-4">
   <%# お題画像 %>
-  <%= image_tag @theme.image_url, {class:"w-1/2 md:w-2/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mb-2 2xl:mb-5"} if @theme.image_url %>
+  <%= image_tag @theme.image_url, {class:"w-4/5 md:w-3/5 lg:w-3/10 xl:w-4/12 2xl:w-1/4 mb-2 2xl:mb-5"} if @theme.image_url %>
 
   <%# お題 %>
-  <h2 class="md:text-2xl font-semibold"><%= @theme.title %></h2>
+  <h2 class="text-xl md:text-2xl font-semibold"><%= @theme.title %></h2>
 
   <%# ジャンル %>
   <h3 class="md:text-l"><%= "ジャンル: #{@theme_genre.first}" if @theme_genre.present? %></h3>
