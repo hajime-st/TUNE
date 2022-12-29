@@ -35,9 +35,9 @@
     <div class="text-sm mb-10">1つのお題につき1人1曲のみ回答できます。</div>
     
     <% if !@answers.empty? %>
-      <div class="flex self-center text-sm mb-1">
+      <div class="invisible lg:visible flex self-center text-sm mb-1">
         ※PCの方は
-        <div class="text-green-500 italic"><%= link_to "Spotify", "https://accounts.spotify.com/ja/login", target: :_blank, rel: "noopener noreferrer" %></div>
+        <div class="invisible lg:visible text-green-500 italic"><%= link_to "Spotify", "https://accounts.spotify.com/ja/login", target: :_blank, rel: "noopener noreferrer" %></div>
         にログインすることで楽曲がフルで聴けます。
       </div>
     <% end %>
