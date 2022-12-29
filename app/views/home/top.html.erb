@@ -1,13 +1,11 @@
-
-
-<div class="bg-gradient-to-r from-green-300 to-white h-fit flex justify-around mb-10">
-  <div class="flex flex-col self-center py-16">
-    <div class="font-arial whitespace-pre-line font-bold text-4xl tracking-widest">お題を通して
+<div class="bg-gradient-to-r from-green-300 to-white h-fit flex flex-col items-center md:items-start md:flex-row-reverse md:justify-around mb-10">
+  <%= image_tag 'top.png', class:" self-auto h-44 md:h-80" %>
+  <div class="flex flex-col items-center md:items-start self-center md:py-16">
+    <div class="font-arial md:whitespace-pre-line font-bold text-lg md:text-4xl md:tracking-widest">お題を通して
         最高の曲と出会う
     </div>
-    <%= link_to "お題を探す", themes_path, class:"bg-black text-white w-1/2 py-2 text-center font-bold text-lg mt-4 tracking-wider hover:opacity-80" %>
+    <%= link_to "お題を探す", themes_path, class:"bg-black text-white w-1/2 py-2 text-center font-bold md:text-lg mt-2 md:mt-4 mb-3 md:mb-0 tracking-wider hover:opacity-80" %>
   </div>
-  <%= image_tag 'top.png', class:" self-auto h-80" %>
   <%# <div class="font-extrabold text-9xl tracking-wide self-center">TUNE</div> %>
 </div>
 
