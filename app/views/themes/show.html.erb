@@ -34,21 +34,19 @@
   </div>
 
   <% if !@answers.empty? %>
-    <div class="flex flex-col w-11/12 md:w-10/12 lg:w-2/3 xl:w-7/12 2xl:w-1/2 border border-black rounded-md mx-auto">
+    <div class="flex flex-col w-11/12 md:w-10/12 lg:w-2/3 xl:w-7/12 2xl:w-1/2 border border-black rounded-md mx-auto mb-16">
       <%# 解答一覧 %>
       <%= render @answers, { theme: @theme, my_answer: @my_answer} %>
     </div>
 
     <%# コメントフォーム %>
-    <%# if current_user %>
-      <%# <div class="flex w-1/2 mx-auto"> %>
-        <%#= render 'comments/form', { theme: @theme, comment: @comment } %>
-      <%# </div> %>
-    <%# end %>
+    <% if current_user %>
+      <%= render 'comments/form', { theme: @theme, comment: @comment } %>
+    <% end %>
 
     <%# コメントエリア %>
     <%# <h4>コメント一覧</h4> %>
-    <%#= render 'comments/comments', { theme: @theme, comments: @comments } %>
+    <%= render 'comments/comments', { theme: @theme, comments: @comments } %>
   <% end %>
 
 </div>
