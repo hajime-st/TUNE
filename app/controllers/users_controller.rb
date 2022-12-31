@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
+    @answers = @user.answers.includes(:theme).includes(:likes).order(created_at: :desc)
   end
 
   def new

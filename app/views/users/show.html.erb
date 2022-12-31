@@ -1,5 +1,5 @@
-<div class="bg-white flex justify-center pt-5 h-screen">
-  <div class="w-3/5 bg-white items-center">
+<div class="bg-white flex flex-col items-center pt-5 mb-20">
+  <div class="lg:w-3/5 bg-white items-center">
     <div class="flex">
       <%= image_tag @user.avatar.url, class: 'rounded-full object-center' %>
       <div class="mt-1 ml-4">
@@ -21,6 +21,12 @@
       <%#= render 'shared/follow_stats', {user: @user} %> 
       <%#= render 'follow_form', {user: @user} if logged_in? %>
     </div>
-    
+  </div>
+  <div class="w-11/12 lg:w-3/5">
+    <% if !@user.answers.empty? %>
+      <%= render partial: "answers" , locals: {answers: @answers} %>
+    <% else %>
+      <div>曲がありません
+    <% end %>
   </div>
 </div>
