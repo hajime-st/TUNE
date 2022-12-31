@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :users, param: :username do
     member do
       get :following, :followers
+      get :themes
+      get :answers
+      get :likes
     end
   end
   resource :profile, only: %i[edit update]
