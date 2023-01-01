@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def likes
+    @user = User.find_by(username: params[:username])
+  end
+
   private
 
   def user_params
