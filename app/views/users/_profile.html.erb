@@ -1,0 +1,27 @@
+<div class="lg:w-3/5 bg-white items-center">
+  <div class="flex">
+    <%= image_tag user.avatar.url, class: 'rounded-full object-center' %>
+    <div class="mt-1 ml-4">
+      <div class="font-bold text-xl"><%= user.name %></div>
+      <div class="text-sm -mt-1"><%= "@#{user.username}" %></div>
+      <div class="mt-2">
+        <% if current_user?(user) %>
+          <%= link_to t('defaults.user_edit'), edit_profile_path, class: "w-1/6 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold px-1 py-2 text-center" %>
+          <%= link_to t('defaults.logout'), logout_path, class: "w-1/6 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold px-1 py-2 text-center",
+          data: { turbo_method: :delete } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5">
+    <%= user.bio %>
+  </div>
+  <div class="mt-8 flex items-center">
+    <%#= render 'shared/follow_stats', {user: user} %> 
+    <%#= render 'follow_form', {user: user} if logged_in? %>
+  </div>
+  <div class="flex text-xl mb-5 space-x-3 ">
+    <div class="<%= ' font-bold' if current_page?(user_path) %>"><%= link_to 'all', user_path(user.name) %></div>
+    <div class="<%= ' font-bold' if current_page?(likes_user_path) %>"><%= link_to '♡', likes_user_path(user.name) %></div>
+  </div>
+</div>
