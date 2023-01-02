@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find_by(username: params[:username])
+    @user_likes = @user.likes.order(created_at: :desc).page(params[:page])
   end
 
   private

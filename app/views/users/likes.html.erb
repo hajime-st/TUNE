@@ -2,8 +2,13 @@
   <%= render  'profile', user: @user %>
   <div class="w-11/12 lg:w-3/5">
     <% if !@user.likes.empty? %>
-      <%# binding.pry %>
-      <%= render "likes", user_likes:@user.likes, user:@user %>
+      <%# 今のページの`<turbo-frame>` %>
+      <%= turbo_frame_tag "user_likes-#{@user_likes.current_page}" do %>
+        <%# 今のページで取得したuser_likes一覧 %>
+        <%= render "likes", user_likes:@user_likes, user:@user %>
+        <%# 遅延読み込みで次ページを取得する`<turbo-frame>` %>
+        <%= turbo_frame_tag "user_likes-#{@user_likes.next_page}", loading: :lazy, src: path_to_next_page(@user_likes) %>
+      <% end %>
     <% else %>
       いいねした曲がありません
     <% end %>
