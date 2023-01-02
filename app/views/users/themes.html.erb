@@ -1,0 +1,16 @@
+<div class="bg-white flex flex-col items-center pt-5 mb-20">
+  <%= render  'profile', user: @user %>
+  <div class="w-11/12 lg:w-3/5">
+    <% if !@user_themes.empty? %>
+      <%# 今のページの`<turbo-frame>` %>
+      <%= turbo_frame_tag "user_themes-#{@user_themes.current_page}" do %>
+        <%# 今のページで取得したuser_themes一覧 %>
+        <%= render "themes", user_themes:@user_themes, user:@user %>
+        <%# 遅延読み込みで次ページを取得する`<turbo-frame>` %>
+        <%= turbo_frame_tag "user_themes-#{@user_themes.next_page}", loading: :lazy, src: path_to_next_page(@user_themes) %>
+      <% end %>
+    <% else %>
+      投稿中のお題はありません
+    <% end %>
+  </div>
+</div>
