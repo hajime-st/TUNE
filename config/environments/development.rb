@@ -68,6 +68,11 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Mailer settings
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

@@ -21,7 +21,7 @@
     <%#= render 'follow_form', {user: user} if logged_in? %>
   </div>
   <div class="flex text-xl mb-5 space-x-3 ">
-    <div class="<%= 'font-bold' if current_page?(user_path) %>"><%= link_to 'all', user_path(user.name) %></div>
+    <div class="<%= 'font-bold' if current_page?(user_path) %>"><%= link_to '解答した曲', user_path(user.name) %></div>
     <div class="<%= 'font-bold' if current_page?(themes_user_path) %>"><%= link_to '投稿したお題', themes_user_path(user.name) %></div>
     <div class="<%= 'font-bold' if current_page?(likes_user_path) %>"><%= link_to '♡', likes_user_path(user.name) %></div>
   </div>

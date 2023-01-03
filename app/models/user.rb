@@ -23,6 +23,7 @@ class User < ApplicationRecord
   VALID_USERNAME_REGEX = /\A(?!\.)[\w.]+(?<!\.)\z/
   validates :username, presence: true, uniqueness: true, length: { maximum: 20 }, format: { with: VALID_USERNAME_REGEX, message: "は英数字、アンダーバーのみ使用できます" }
   validates :bio, length: { maximum: 160 }
+  validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
 
 
 
