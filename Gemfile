@@ -95,6 +95,12 @@ group :development do
 
   # Aleart when N+1 problem occur
   gem "bullet"
+  
+  # To check e-mail in the development environment
+  gem 'letter_opener_web'
+
+  # To manage different constants for each environment
+  gem 'config'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

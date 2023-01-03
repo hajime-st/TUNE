@@ -1,0 +1,10 @@
+<div class="flex flex-col items-center my-8 md:my-20">
+  <%= form_with model: @user, url: password_reset_path(@token), class: "bg-white pt-10 flex flex-col w-11/12 md:w-5/12 xl:w-4/12 2xl:w-3/12", local: true do |f| %>
+    <p class="text-xl md:text-3xl text-center font-bold w-full">新しいパスワードを入力</p>
+    <%= f.password_field :password, placeholder: "新しいパスワード*", class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
+    <%= f.password_field :password_confirmation, placeholder: "パスワード確認*", class: "block mt-4 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
+    <button class="mt-3 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-lg lg:text-xl text-center">
+      <%= f.submit '送信する' %>
+    </button>
+  <% end %>
+</div>

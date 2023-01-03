@@ -1,0 +1,13 @@
+<div class="flex flex-col items-center my-8 md:my-20">
+    <%= form_with url: password_resets_path, class:"bg-white pt-10 flex flex-col w-11/12 md:w-5/12 xl:w-4/12 2xl:w-3/12", local: true do |f| %>
+      <p class="text-xl md:text-3xl text-left font-bold w-full">パスワードリセット</p>
+      <p class="mt-2">メールアドレスを入力すると、パスワード変更用のリンクが送信されます。</p>
+      <div class="mt-4">
+        <%= f.email_field :email, placeholder:"メールアドレス", class: "block mt-2 border border-black rounded-sm w-full py-3 px-3 leading-tight" %>
+      </div>
+      <button class="mt-3 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-lg lg:text-xl text-center">
+        <%= f.submit '送信する' %>
+      </button>
+    <% end %>
+  </div>
+</div>
