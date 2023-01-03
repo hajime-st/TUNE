@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailer settings
-  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  # config.action_mailer.default_url_options = Settings.default_url_options.to_h
 end
