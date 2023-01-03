@@ -424,7 +424,7 @@ DEPENDENCIES
   bullet
   capybara
   carrierwave
-  config (= 2.2.1)
+  config
   cssbundling-rails (>= 0.1.0)
   debug
   dotenv-rails

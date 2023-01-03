@@ -100,7 +100,7 @@ group :development do
   gem 'letter_opener_web'
 
   # To manage different constants for each environment
-  gem 'config', '2.2.1'
+  gem 'config'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
