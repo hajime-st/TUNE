@@ -92,16 +92,14 @@ RSpec.describe User, type: :model do
 
   #ユーザーのオブジェクトかどうかを調べる
   describe "check if it is a user's object" do
-    before do
-      @theme = FactoryBot.create(:theme)
-    end
 
     # 引数がユーザーのオブジェクトだった場合
     context "when argument is a user's object" do
       
       # trueを返す
       it "returns true" do
-        expect(@theme.user.own?(@theme)).to eq true
+        theme = FactoryBot.build(:theme)
+        expect(theme.user.own?(theme)).to eq true
       end
     end
     
