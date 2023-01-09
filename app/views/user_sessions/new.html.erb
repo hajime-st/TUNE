@@ -15,8 +15,12 @@
     <% if flash.now[:danger] %>
       <div class="mt-2 text-red-500"><%= flash.now[:danger] %></div>
     <% end %>
-    <button class="mt-5 mb-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
+    <button class="mt-7 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
       <%= f.submit (t 'defaults.login') %>
+    </button>
+    <div class="text-center my-3">OR</div>
+    <button class="mb-7 bg-white border hover:text-gray-600 text-black font-bold py-2 w-full text-center">
+      <%= link_to 'ゲストとしてログインする', guest_login_path, data: { turbo_method: :post } %>
     </button>
   <% end %>
   <div class="mt-5 mb-36">
