@@ -12,8 +12,10 @@
         <%= link_to 'パスワードをお忘れですか？', new_password_reset_path	, class:"text-sky-600" %>
       </div>
     </div>
-    <div class="mt-2 text-red-500"><%= flash.now[:danger] %></div>
-    <button class="mt-7 mb-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
+    <% if flash.now[:danger] %>
+      <div class="mt-2 text-red-500"><%= flash.now[:danger] %></div>
+    <% end %>
+    <button class="mt-5 mb-9 bg-black hover:bg-zinc-700 text-white hover:text-slate-50 font-bold py-2 w-full text-center">
       <%= f.submit (t 'defaults.login') %>
     </button>
   <% end %>
@@ -21,7 +23,5 @@
     <div>
       アカウントをお持ちでないですか？<%= link_to (t '.to_register_page'), new_user_path, class:"text-sky-600	ml-1" %>
     </div>
-
-    <%#= link_to (t '.password_forget'), '#' %>
   </div>
 </div>
