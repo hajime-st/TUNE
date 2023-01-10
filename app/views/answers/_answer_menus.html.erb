@@ -1,6 +1,6 @@
   <% if !my_answer.present? %>
     <%= link_to "この曲で解答する", theme_answers_path(theme, answer: "#{song.id}"), data: { turbo_method: :post },
-        class:"border border-2 text-xs md:text-m ml-2 md:mr-1 lg:mr-2 xl:mr-3 2xl:mr-4 px-2 lg:px-3 py-3 lg:py-5 border-black bg-white hover:bg-green-400 text-black rounded-full font-bold self-center text-center" %>
+        class:"border border-2 text-xs md:text-m ml-2 md:mr-1 lg:mr-2 xl:mr-3 2xl:mr-4 px-1 md:px-2 lg:px-3 py-3 lg:py-5 border-black bg-white hover:bg-green-400 text-black rounded-full font-bold self-center text-center" %>
         <%# class:"w-30 border-2 border-black bg-white hover:bg-green-400 text-black rounded-full font-bold py-3 text-center" %>
   <% else %>
     <%= link_to "解答を更新する", theme_answer_path(theme, my_answer, answer: "#{song.id}"), data: { turbo_method: :patch },
