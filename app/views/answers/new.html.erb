@@ -29,7 +29,7 @@
     <% if @songs %>
       <% @songs.each do |song| %>
       <div class="my-4 flex">
-        <iframe class="mb-2 mx-auto" style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe class="mb-2 mx-auto" style="border-radius:12px" src="https://open.spotify.com/embed/track/<%= song.id %>?utm_source=generator" width="78%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <% if current_user %>
           <% if @theme_genre.empty? %>
             <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
@@ -45,5 +45,4 @@
       <% end %>
     <% end %>
   <% end %>
-  </div>
 </div>
