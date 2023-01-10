@@ -1,5 +1,5 @@
 <div class="mb-28">
-  <% if current_user.own?(@theme) %>
+  <% if current_user && current_user.own?(@theme) %>
     <div class="space-x-2 flex justify-end mt-2 mr-5 lg:text-lg xl:text-xl">
       <%= link_to "編集", edit_theme_path(@theme) %>
       <%= button_to "削除", theme_path(@theme), { method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" }}} %>
