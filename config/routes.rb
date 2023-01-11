@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   root 'home#top'
+  get '/terms', to: 'home#terms'
+  get '/privacy', to: 'home#privacy'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   post '/guest_login', to: 'user_sessions#guest_login'
