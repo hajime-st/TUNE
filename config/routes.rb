@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   post '/guest_login', to: 'user_sessions#guest_login'
   delete 'logout', to: 'user_sessions#destroy'
-
+  
+  resources :themes do
+    resources :answers
+    resources :comments, only: %i[create destroy]
+  end
+  
   resources :users, param: :username, path: '/' do
     member do
       # get :following, :followers
@@ -17,13 +22,8 @@ Rails.application.routes.draw do
       get :likes
     end
   end
-
   resource :profile, only: %i[edit update]
   resources :relationships, only: %i[create destroy]
-  resources :themes do
-    resources :answers
-    resources :comments, only: %i[create destroy]
-  end
   resources :likes, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]
 end
