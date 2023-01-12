@@ -40,3 +40,5 @@
 
 /node_modules
 /config/environments/production.rb
+
+.DS_Store

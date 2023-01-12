@@ -11,9 +11,10 @@ class AnswersController < ApplicationController
       end
     end
     @theme_genre = []
-    Theme.find(params[:theme_id]).genre.split(",").each do |genre|
-      @theme_genre << Regexp.new(genre)
-    end
+    # Theme.find(params[:theme_id]).genre.split(",").each do |genre|
+    #   @theme_genre << Regexp.new(genre)
+    # end
+    Theme.find(params[:theme_id]).genre.split(",").map{ |genre| @theme_genre << Regexp.new(genre) }
   end
 
   def create

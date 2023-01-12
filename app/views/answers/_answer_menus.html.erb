@@ -2,7 +2,7 @@
     <%= link_to "この曲で解答", theme_answers_path(theme, answer: "#{song.id}"), data: { turbo_method: :post },
         class: "border border-2 text-xs md:text-m xl:text-base ml-2 md:mr-1 xl:mr-2 2xl:mr-16 px-1 md:px-2 xl:px-3 py-3 lg:py-4 border-black bg-white hover:bg-green-400 text-black rounded-full font-bold self-center text-center" %>
         <%# class:"border border-2 text-xs md:text-m xl:text-base ml-2 md:mr-1 xl:mr-2 2xl:mr-4 px-1 md:px-2 xl:px-3 py-3 lg:py-5 border-black bg-white hover:bg-green-400 text-black rounded-full font-bold self-center text-center" %>
-  <% else %>
-    <%= link_to "解答を更新", theme_answer_path(theme, my_answer, answer: "#{song.id}"), data: { turbo_method: :patch },
+  <%# else %>
+    <%#= link_to "解答を更新", theme_answer_path(theme, my_answer, answer: "#{song.id}"), data: { turbo_method: :patch },
         class: "border border-2 text-xs md:text-m xl:text-base ml-2 md:mr-1 xl:mr-2 2xl:mr-16 px-1 md:px-2 xl:px-3 py-3 lg:py-4 border-black bg-white hover:bg-red-500 text-black rounded-full font-bold self-center text-center" %>
   <% end %>

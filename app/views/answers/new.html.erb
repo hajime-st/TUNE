@@ -33,12 +33,12 @@
         <% if current_user %>
           <% if @theme_genre.empty? %>
             <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
-          <% elsif @theme_genre.first === "洋楽" && !genre_include?(song.artists.first.genres, @theme_genre) %>
+          <% elsif @theme_genre.first == '洋楽' && !genre_include?(song.artists.first.genres, @theme_genre) %>
             <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
-          <% elsif @theme_genre.first != "洋楽" && genre_include?(song.artists.first.genres, @theme_genre) %>
+          <% elsif @theme_genre.first != '洋楽' && genre_include?(song.artists.first.genres, @theme_genre) %>
             <%= render 'answer_menus', {theme: @theme, my_answer: @my_answer, song: song} %>
           <% else %>
-            <div class="text-center text-lg font-bold">この曲はジャンル対象外です</div>
+            <div class="text-center self-center text-xs md:text-m xl:text-base font-bold">この曲はジャンル対象外です</div>
           <% end %>
         <% end %>
       </div>
